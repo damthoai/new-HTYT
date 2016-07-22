@@ -1,0 +1,39 @@
+﻿2016-07-20 10:25:17,072 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 10:25:21,300 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 11:35:43,764 [3] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 11:52:02,039 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 11:55:19,381 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 11:55:46,670 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 11:56:34,761 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 11:57:22,024 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 11:58:04,724 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 11:58:04,758 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 11:58:53,118 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 11:59:06,770 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 12:02:07,341 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 12:02:11,217 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 12:05:12,650 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 12:07:33,674 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 12:08:00,517 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 12:09:12,207 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 12:09:24,455 [9] ERROR UKPI.frmMain - Value cannot be null.
+Parameter name: type
+System.ArgumentNullException: Value cannot be null.
+Parameter name: type
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at UKPI.frmMain.MenuItem_OnClick(Object sender, EventArgs e) in F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\UKPIApp\Presentation\frmMain.cs:line 646
+2016-07-20 12:09:28,483 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 12:09:34,329 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 12:10:55,580 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 12:11:03,767 [9] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 12:11:11,826 [10] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 12:12:57,599 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 12:19:44,883 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 12:21:20,290 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 12:22:28,358 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 12:24:58,677 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 12:28:43,598 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 12:28:50,773 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-20 12:29:45,550 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-20 12:35:14,148 [11] DEBUG UKPI.frmMain - Thread was being aborted.

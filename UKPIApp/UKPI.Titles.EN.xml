@@ -1947,6 +1947,14 @@
 		<Value>Báo Cáo</Value>
 	</Titles>
   <Titles>
+    <Name>frmMain.mnuKhoRFID</Name>
+    <Value>Kho RFID</Value>
+  </Titles>
+    <Titles>
+    <Name>frmMain.mnuNhapKhoRFID</Name>
+    <Value>Nhập Kho RFID</Value>
+  </Titles>
+  <Titles>
     <Name>frmMain.mnuHangHoa</Name>
     <Value>Hàng Hóa</Value>
   </Titles>
