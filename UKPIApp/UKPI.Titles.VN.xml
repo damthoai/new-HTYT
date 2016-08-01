@@ -3490,6 +3490,10 @@
 		<Name>frmnhapkhothuoc.lblDonViCungCap</Name>
 		<Value>Đơn vị cung cấp *</Value>
 	</Titles>
+  <Titles>
+		<Name>frmnhapkhothuoc.lblTinhtrangReader</Name>
+		<Value>Tình trạng kết nối RFID Reader</Value>
+	</Titles>
 	<Titles>
 		<Name>frmnhapkhothuoc.lblMaDonViCungCap</Name>
 		<Value>Mã đơn vị cung cấp *</Value>

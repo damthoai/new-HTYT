@@ -621,3 +621,6 @@ F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\UKPIApp\obj\Debug
 F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\UKPIApp\obj\Debug\HHCC.application
 F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\UKPIApp\obj\Debug\UKPI.Presentation.frmDanhMucHangHoa.resources
 F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\UKPIApp\obj\Debug\UKPI.Presentation.frmNhapKhoRFID.resources
+F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\UKPIApp\bin\Debug\Intermec.DataCollection.RFID.AdvancedBRI.dll
+F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\UKPIApp\bin\Debug\Intermec.DataCollection.RFID.BasicBRI.dll
+F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\UKPIApp\obj\Debug\UKPI.Presentation.frmNhapKhoChiTiet.resources

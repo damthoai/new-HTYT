@@ -41,6 +41,9 @@ namespace UKPI.Presentation
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmnhapkhothuoc));
             this.grpThongTinKhamBenh = new System.Windows.Forms.GroupBox();
+            this.txtTenThuoc = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblTinhtrangReader = new System.Windows.Forms.Label();
             this.btnDong = new System.Windows.Forms.Button();
             this.txtMaDonViCungCap = new System.Windows.Forms.TextBox();
             this.lblMaDonViCungCap = new System.Windows.Forms.Label();
@@ -81,8 +84,11 @@ namespace UKPI.Presentation
             // 
             // grpThongTinKhamBenh
             // 
-            this.grpThongTinKhamBenh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpThongTinKhamBenh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpThongTinKhamBenh.Controls.Add(this.txtTenThuoc);
+            this.grpThongTinKhamBenh.Controls.Add(this.textBox1);
+            this.grpThongTinKhamBenh.Controls.Add(this.lblTinhtrangReader);
             this.grpThongTinKhamBenh.Controls.Add(this.btnDong);
             this.grpThongTinKhamBenh.Controls.Add(this.txtMaDonViCungCap);
             this.grpThongTinKhamBenh.Controls.Add(this.lblMaDonViCungCap);
@@ -102,10 +108,40 @@ namespace UKPI.Presentation
             this.grpThongTinKhamBenh.Controls.Add(this.cbbPhongKham);
             this.grpThongTinKhamBenh.Location = new System.Drawing.Point(4, 6);
             this.grpThongTinKhamBenh.Name = "grpThongTinKhamBenh";
-            this.grpThongTinKhamBenh.Size = new System.Drawing.Size(927, 150);
+            this.grpThongTinKhamBenh.Size = new System.Drawing.Size(1257, 150);
             this.grpThongTinKhamBenh.TabIndex = 0;
             this.grpThongTinKhamBenh.TabStop = false;
             this.grpThongTinKhamBenh.Text = "Thông tin nhập kho";
+            // 
+            // txtTenThuoc
+            // 
+            this.txtTenThuoc.Location = new System.Drawing.Point(973, 60);
+            this.txtTenThuoc.MaxLength = 250;
+            this.txtTenThuoc.Multiline = true;
+            this.txtTenThuoc.Name = "txtTenThuoc";
+            this.txtTenThuoc.Size = new System.Drawing.Size(174, 24);
+            this.txtTenThuoc.TabIndex = 85;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1040, 26);
+            this.textBox1.MaxLength = 250;
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(94, 24);
+            this.textBox1.TabIndex = 84;
+            this.textBox1.Text = "Đang kết nối";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblTinhtrangReader
+            // 
+            this.lblTinhtrangReader.AutoSize = true;
+            this.lblTinhtrangReader.Location = new System.Drawing.Point(878, 30);
+            this.lblTinhtrangReader.Name = "lblTinhtrangReader";
+            this.lblTinhtrangReader.Size = new System.Drawing.Size(156, 13);
+            this.lblTinhtrangReader.TabIndex = 83;
+            this.lblTinhtrangReader.Text = "Tình trạng kết nối RFID Reader";
             // 
             // btnDong
             // 
@@ -121,12 +157,13 @@ namespace UKPI.Presentation
             // 
             // txtMaDonViCungCap
             // 
-            this.txtMaDonViCungCap.Location = new System.Drawing.Point(677, 60);
+            this.txtMaDonViCungCap.Location = new System.Drawing.Point(681, 60);
             this.txtMaDonViCungCap.MaxLength = 250;
             this.txtMaDonViCungCap.Multiline = true;
             this.txtMaDonViCungCap.Name = "txtMaDonViCungCap";
-            this.txtMaDonViCungCap.Size = new System.Drawing.Size(174, 24);
+            this.txtMaDonViCungCap.Size = new System.Drawing.Size(170, 24);
             this.txtMaDonViCungCap.TabIndex = 6;
+            this.txtMaDonViCungCap.Text = "Demo 123";
             // 
             // lblMaDonViCungCap
             // 
@@ -154,9 +191,9 @@ namespace UKPI.Presentation
             this.lblDonViCungCap.AutoSize = true;
             this.lblDonViCungCap.Location = new System.Drawing.Point(585, 31);
             this.lblDonViCungCap.Name = "lblDonViCungCap";
-            this.lblDonViCungCap.Size = new System.Drawing.Size(90, 13);
+            this.lblDonViCungCap.Size = new System.Drawing.Size(93, 13);
             this.lblDonViCungCap.TabIndex = 80;
-            this.lblDonViCungCap.Text = "Đơn vị cung cấp*";
+            this.lblDonViCungCap.Text = "Đơn vị cung cấp* ";
             // 
             // txtMaSoHDD
             // 
@@ -185,7 +222,7 @@ namespace UKPI.Presentation
             this.btnXoaThuoc.Name = "btnXoaThuoc";
             this.btnXoaThuoc.Size = new System.Drawing.Size(106, 23);
             this.btnXoaThuoc.TabIndex = 7;
-            this.btnXoaThuoc.Text = "Xóa Thuốc";
+            this.btnXoaThuoc.Text = "Xóa dòng";
             this.btnXoaThuoc.UseVisualStyleBackColor = true;
             this.btnXoaThuoc.Click += new System.EventHandler(this.btnXoaThuoc_Click);
             // 
@@ -210,12 +247,13 @@ namespace UKPI.Presentation
             // 
             // txtDonViCungCap
             // 
-            this.txtDonViCungCap.Location = new System.Drawing.Point(677, 26);
+            this.txtDonViCungCap.Location = new System.Drawing.Point(681, 26);
             this.txtDonViCungCap.MaxLength = 250;
             this.txtDonViCungCap.Multiline = true;
             this.txtDonViCungCap.Name = "txtDonViCungCap";
-            this.txtDonViCungCap.Size = new System.Drawing.Size(174, 24);
+            this.txtDonViCungCap.Size = new System.Drawing.Size(170, 24);
             this.txtDonViCungCap.TabIndex = 5;
+            this.txtDonViCungCap.Text = "Demo 123";
             // 
             // lblNgayNhapKho
             // 
@@ -424,29 +462,31 @@ namespace UKPI.Presentation
             // 
             this.lblTongThanhTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTongThanhTien.AutoSize = true;
-            this.lblTongThanhTien.Location = new System.Drawing.Point(700, 470);
+            this.lblTongThanhTien.Location = new System.Drawing.Point(1030, 470);
             this.lblTongThanhTien.Name = "lblTongThanhTien";
             this.lblTongThanhTien.Size = new System.Drawing.Size(82, 13);
             this.lblTongThanhTien.TabIndex = 58;
             this.lblTongThanhTien.Text = "Tổng thành tiền";
+            this.lblTongThanhTien.Visible = false;
             // 
             // txtTongThanhTien
             // 
             this.txtTongThanhTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTongThanhTien.Enabled = false;
-            this.txtTongThanhTien.Location = new System.Drawing.Point(788, 467);
+            this.txtTongThanhTien.Location = new System.Drawing.Point(1118, 467);
             this.txtTongThanhTien.Name = "txtTongThanhTien";
             this.txtTongThanhTien.Size = new System.Drawing.Size(137, 20);
             this.txtTongThanhTien.TabIndex = 70;
             this.txtTongThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTongThanhTien.Visible = false;
             // 
             // grdToaThuoc
             // 
             this.grdToaThuoc.AllowUserToAddRows = false;
             this.grdToaThuoc.AllowUserToDeleteRows = false;
-            this.grdToaThuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdToaThuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -467,7 +507,7 @@ namespace UKPI.Presentation
             this.grdToaThuoc.Location = new System.Drawing.Point(4, 162);
             this.grdToaThuoc.Name = "grdToaThuoc";
             this.grdToaThuoc.RowHeadersWidth = 39;
-            this.grdToaThuoc.Size = new System.Drawing.Size(927, 281);
+            this.grdToaThuoc.Size = new System.Drawing.Size(1257, 281);
             this.grdToaThuoc.TabIndex = 10;
             this.grdToaThuoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdToaThuoc_CellContentClick);
             // 
@@ -475,14 +515,14 @@ namespace UKPI.Presentation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 495);
+            this.ClientSize = new System.Drawing.Size(1267, 495);
             this.Controls.Add(this.txtTongThanhTien);
             this.Controls.Add(this.lblTongThanhTien);
             this.Controls.Add(this.grdToaThuoc);
             this.Controls.Add(this.grpThongTinKhamBenh);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmnhapkhothuoc";
-            this.Text = "NHẬP KHO THUỐC";
+            this.Text = "NHẬP KHO";
             this.grpThongTinKhamBenh.ResumeLayout(false);
             this.grpThongTinKhamBenh.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdToaThuoc)).EndInit();
@@ -529,5 +569,8 @@ namespace UKPI.Presentation
         private System.Windows.Forms.TextBox txtMaSoHDD;
         private System.Windows.Forms.TextBox txtMaNhanVienNhap;
         private System.Windows.Forms.TextBox txtMaDonViCungCap;
+        private System.Windows.Forms.Label lblTinhtrangReader;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTenThuoc;
     }
 }

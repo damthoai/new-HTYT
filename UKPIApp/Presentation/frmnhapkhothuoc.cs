@@ -18,6 +18,7 @@ using UKPI.Utils;
 using UKPI.DataAccessObject;
 using DataTable = System.Data.DataTable;
 using UKPI.Controls;
+using Intermec.DataCollection.RFID;
 namespace UKPI.Presentation
 {
     public partial class frmnhapkhothuoc : Form
@@ -25,7 +26,9 @@ namespace UKPI.Presentation
         #region Private fields
 
         private static readonly log4net.ILog Log = log4net.LogManager.GetLogger(typeof(frmnhapkhothuoc));
-
+        private readonly LFThongTinHangHoaChiTietDao _thongTinHangHoaChiTietDao = new LFThongTinHangHoaChiTietDao();
+        List<LFThongTinHangHoaChiTiet> listChiTietHangHoa = new List<LFThongTinHangHoaChiTiet>();
+        private LFThongTinHangHoaChiTiet ttct;
         private clsBaseBO _bo = new clsBaseBO();
         private readonly clsCommon _common = new clsCommon();
         private readonly ShareEntityDao _shareEntityDao = new ShareEntityDao();
@@ -62,12 +65,13 @@ namespace UKPI.Presentation
         #endregion
 
         #region Constructors
-
+        public BRIReader brdr = null;
+        private bool bReaderOffLine = true;
         public frmnhapkhothuoc()
         {
 
             InitializeComponent();
-
+            //OpenReaderConnection();
             clsTitleManager.InitTitle(this);
             this.cellDateTimePicker = new DateTimePicker();
             this.cellDateTimePicker.Format = DateTimePickerFormat.Custom;
@@ -145,7 +149,7 @@ namespace UKPI.Presentation
             //grdToaThuoc.Columns.Add(col1);
 
             DataGridViewTextBoxColumn tenThuocColumn = new DataGridViewTextBoxColumn();
-            tenThuocColumn.HeaderText = "Tên thuốc";
+            tenThuocColumn.HeaderText = "Tên";
             tenThuocColumn.Width = 145;
             tenThuocColumn.ReadOnly = true;
             tenThuocColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -155,25 +159,28 @@ namespace UKPI.Presentation
 
             DataGridViewComboBoxColumn col = new DataGridViewComboBoxColumn();
             col.Width = 140;
-            col.HeaderText = "Mã thuốc";
+            col.HeaderText = "Mã";
             col.DataSource = lstThuoc;
             col.DisplayMember = "MaThuocYTeHienThi";
-            col.ValueMember = "MedicineID";
+            //col.ValueMember = "MedicineID";
+            col.ValueMember = "MaThuocYTeHienThi";
             col.SortMode = DataGridViewColumnSortMode.NotSortable;
             grdToaThuoc.Columns.Add(col);
 
             DataGridViewTextBoxColumn hanSuDungColumn = new DataGridViewTextBoxColumn();
             hanSuDungColumn.Width = 100;
             hanSuDungColumn.HeaderText = "Hạn sử dụng";
+            hanSuDungColumn.Visible = true;
             hanSuDungColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
-            grdToaThuoc.Columns.Add(hanSuDungColumn);
+            //grdToaThuoc.Columns.Add(hanSuDungColumn);
 
             DataGridViewCheckBoxColumn baoHiemColumn = new DataGridViewCheckBoxColumn();
             baoHiemColumn.Width = 100;
             baoHiemColumn.HeaderText = "Thuốc BH";
-            baoHiemColumn.ReadOnly = true;
+            hanSuDungColumn.Visible = false;
+            //baoHiemColumn.ReadOnly = true;
             baoHiemColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
-            grdToaThuoc.Columns.Add(baoHiemColumn);
+            //grdToaThuoc.Columns.Add(baoHiemColumn);
 
             DataGridViewTextBoxColumn soLuongColumn = new DataGridViewTextBoxColumn();
             soLuongColumn.Width = 130;
@@ -191,14 +198,14 @@ namespace UKPI.Presentation
             giaNhapColumn.HeaderText = "Giá thời diểm nhập";
             giaNhapColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             giaNhapColumn.Visible = false ;
-            grdToaThuoc.Columns.Add(giaNhapColumn);
+            //grdToaThuoc.Columns.Add(giaNhapColumn);
 
             DataGridViewTextBoxColumn giaTTColumn = new DataGridViewTextBoxColumn();
             giaTTColumn.Width = 130;
-            giaTTColumn.HeaderText = "Giá mua vào";
+            giaTTColumn.HeaderText = "Giá mua vào";hanSuDungColumn.Visible = false;
             giaTTColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             // giaTTColumn.ReadOnly = true;
-            grdToaThuoc.Columns.Add(giaTTColumn);
+            //grdToaThuoc.Columns.Add(giaTTColumn);
 
             //DataGridViewComboBoxColumn cachUongColumn = new DataGridViewComboBoxColumn();
             //cachUongColumn.Width = 130;
@@ -209,14 +216,14 @@ namespace UKPI.Presentation
             //grdToaThuoc.Columns.Add(cachUongColumn);
             DataGridViewTextBoxColumn giaSTColumn = new DataGridViewTextBoxColumn();
             giaSTColumn.Width = 130;
-            giaSTColumn.HeaderText = "Giá mua vào có thuế";
+            giaSTColumn.HeaderText = "Giá mua vào có thuế";hanSuDungColumn.Visible = false;
             giaSTColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             //giaSTColumn.ReadOnly = true;
-            grdToaThuoc.Columns.Add(giaSTColumn);
+            //grdToaThuoc.Columns.Add(giaSTColumn);
 
             DataGridViewTextBoxColumn hamLuongColumn = new DataGridViewTextBoxColumn();
             hamLuongColumn.Width = 130;
-            hamLuongColumn.HeaderText = "Hàm lượng";
+            hamLuongColumn.HeaderText = "ĐVT";
             hamLuongColumn.ReadOnly = true;
             hamLuongColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             grdToaThuoc.Columns.Add(hamLuongColumn);
@@ -228,11 +235,20 @@ namespace UKPI.Presentation
             thanhTienColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             grdToaThuoc.Columns.Add(thanhTienColumn);
 
+            DataGridViewButtonColumn byRFIDColumn = new DataGridViewButtonColumn();
+            byRFIDColumn.Width = 130;
+            byRFIDColumn.HeaderText = "by RFID";
+            byRFIDColumn.ReadOnly = true;
+            byRFIDColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
+            grdToaThuoc.Columns.Add(byRFIDColumn);
+
+            //grdToaThuoc.Columns.Add(thanhTienColumn);
             grdToaThuoc.CellBeginEdit += this.dataGridView1_CellBeginEdit;
             grdToaThuoc.CellEndEdit += new DataGridViewCellEventHandler(dataGridView1_CellEndEdit);
             grdToaThuoc.EditingControlShowing += new DataGridViewEditingControlShowingEventHandler(dataGridView1_EditingControlShowing);
             grdToaThuoc.CellValueChanged += grdToaThuoc_CellValueChanged;
-            grdToaThuoc.CellClick += grdToaThuoc_CellDoubleClick;
+            // grdToaThuoc.CellClick += dataGridView1_CellClick;
+            grdToaThuoc.CellContentClick += dataGridView1_CellContentClick;
             int rowIndex = this.grdToaThuoc.Rows.Add(1);
             var row = this.grdToaThuoc.Rows[rowIndex];
 
@@ -253,7 +269,89 @@ namespace UKPI.Presentation
             //    cellDateTimePicker.Visible = true;
 
             //}
+         }
+        
+        // Thực hiện show PopUp Form Khi Click By RFID. Made by PhongLF
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {                        
+            if(e.ColumnIndex == 6 && e.RowIndex >= 0)
+            {
+                
+                if (grdToaThuoc.Rows[e.RowIndex].Cells[2].Value != null)
+                {
+                    DataGridViewRow row = this.grdToaThuoc.Rows[e.RowIndex];
+                    
+                    List<ThongTinThuoc> lstThuoc = _shareEntityDao.LoadThongTinThuoc();
+                     
+                    string pos = grdToaThuoc.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    int n = -1;
+                    foreach (ThongTinThuoc item in lstThuoc)
+                    {
+                        if(item.MaThuocYTe == pos)
+                        {
+                            n = lstThuoc.IndexOf(item);
+                            break;
+                        }
+                    }
+                    //MessageBox.Show(n.ToString());
+                    ThongTinThuoc tttcbm = lstThuoc[n];
+                    var form = new frmNhapKhoChiTiet(tttcbm);
+                    form.Show(this);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn Mã!");
+                }
+                
+            }
+            
+           
+        }
+        
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            currentCell = this.grdToaThuoc.CurrentCell;
+            try
+            {
+                //if (currentCell != null && currentCell.ColumnIndex == 6  )
+                if(e.ColumnIndex == grdToaThuoc.Columns[""].Index && currentCell.ColumnIndex == 6)
+                {
+                    //string maHang = this.grdToaThuoc[currentCell.ColumnIndex - 4, currentCell.RowIndex].Value.ToString();
+
+                    //MessageBox.Show("Button on row {0} clicked", e.RowIndex.ToString());
+
+                    List<ThongTinThuoc> lstThuoc = _shareEntityDao.LoadThongTinThuoc();
+                    ThongTinThuoc tttcbm = this.cbm.SelectedItem as ThongTinThuoc;
+                        //ThongTinThuoc tttcbm = lstThuoc[currentCell.RowIndex];
+                        var form = new frmNhapKhoChiTiet(tttcbm);
+                        form.Show();
+                         
+                        
+                    
+                    // var form = new frmNhapKhoChiTiet(ttct);                    
+                    // form.Show(this);
+                }
+            }
+            catch //(Exception ex)
+            {
+                //MessageBox.Show(ex.ToString());
+
+                MessageBox.Show("Vui lòng chọn Mã!");
+            }
+            
+
+
+
+            /*
+            if (e.ColumnIndex == 6)
+            {
+                
+                // MessageBox.Show((e.RowIndex + 1) + "  Row  " + (e.ColumnIndex + 1) + "  Column button clicked ");
+                MessageBox.Show(this.grdToaThuoc[currentCell.ColumnIndex, currentCell.RowIndex].Value.ToString());
+                //this.grdToaThuoc[currentCell.ColumnIndex, currentCell.RowIndex].Value.ToString()
+            }*/
         }
         void cellDateTimePickerValueChanged(object sender, EventArgs e)
         {
@@ -717,6 +815,8 @@ namespace UKPI.Presentation
         {
             if (cbm != null)
             {
+                
+                
                 // Here we will remove the subscription for selected index changed
                 cbm.SelectedIndexChanged -= new EventHandler(cbm_SelectedIndexChanged);
             }
@@ -755,6 +855,7 @@ namespace UKPI.Presentation
                 cbm = (ComboBox)e.Control;
                 if (cbm != null)
                 {
+                    
                     cbm.DropDownStyle = ComboBoxStyle.DropDown;
                     cbm.AutoCompleteSource = AutoCompleteSource.ListItems;
                     cbm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -798,12 +899,16 @@ namespace UKPI.Presentation
                             MessageBox.Show(clsResources.GetMessage("messages.frmnhapkhothuoc.CheckTrungLapThuoc1"), clsResources.GetMessage("messages.frmnhapkhothuoc.ErrorTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
+                        
+                        //Tính từ vị trí currentCell là CombiBox = 0 --> Column Tên nằm bên trái currentCell là -1
                         this.grdToaThuoc[currentCell.ColumnIndex - 1, currentCell.RowIndex].Value = ttt.MedicineName;
-                        this.grdToaThuoc[currentCell.ColumnIndex + 2, currentCell.RowIndex].Value = ttt.BaoHiem;
-                        this.grdToaThuoc[currentCell.ColumnIndex + 4, currentCell.RowIndex].Value = ttt.GiaDNMuaVAT;
-                        this.grdToaThuoc[currentCell.ColumnIndex + 5, currentCell.RowIndex].Value = ttt.GiaDNMua;
-                        this.grdToaThuoc[currentCell.ColumnIndex + 6, currentCell.RowIndex].Value = ttt.GiaDNMuaVAT;
-                        this.grdToaThuoc[currentCell.ColumnIndex + 7, currentCell.RowIndex].Value = ttt.HamLuong;
+                        //this.grdToaThuoc[currentCell.ColumnIndex + 2, currentCell.RowIndex].Value = ttt.BaoHiem;
+                        this.grdToaThuoc[currentCell.ColumnIndex + 2, currentCell.RowIndex].Value = ttt.TenDonViTinh;
+                        /* this.grdToaThuoc[currentCell.ColumnIndex + 4, currentCell.RowIndex].Value = ttt.GiaDNMuaVAT;
+                         this.grdToaThuoc[currentCell.ColumnIndex + 5, currentCell.RowIndex].Value = ttt.GiaDNMua;
+                         //this.grdToaThuoc[currentCell.ColumnIndex + 6, currentCell.RowIndex].Value = ttt.GiaDNMuaVAT;
+                         //this.grdToaThuoc[currentCell.ColumnIndex + 7, currentCell.RowIndex].Value = ttt.HamLuong;
+                         this.grdToaThuoc[currentCell.ColumnIndex + 6, currentCell.RowIndex].Value = ttt.HamLuong;*/
                     }
                     if (currentCell.ColumnIndex == 2 && (currentCell.RowIndex == grdToaThuoc.Rows.Count - 1))
                     {
@@ -811,13 +916,118 @@ namespace UKPI.Presentation
                     }
 
                 }
+                
             }
+            
         }
 
+        //RFID Reader Area
+        private bool OpenReaderConnection()
+        {
+            //Establish connection with reader.
+            //Choose network or serial connection.
+
+            bool bStatus = false;
+            string sMsg = null;
+            string sConnection = "TCP://showroomlf.ddns.net";
+
+            //define connection
+            //string sConnection = "SERIAL://COM1";
+            //string sConnection = "TCP://192.168.1.1";
 
 
+            //optional: enable IDL debug logging *******************************
+            // BRIReader.LoggerOptionsAdv LogOp = new BRIReader.LoggerOptionsAdv();
+            //LogOp.LogFilePath = ".\\IDLClassDebugLog.txt";
+            //LogOp.ShowNonPrintableChars = true;
+            //******************************************************************
 
+            try
+            {
+                //option 1: open reader connection simple method, no debugging
+                brdr = new BRIReader(this, sConnection);
 
+                //option two -> set size of reader buffer, event buffer, and enable IDL logging.
+                //Reader Buffer is used for storing tags when you issue a READ, or READ REPORT=NO
+                //Event Buffer is used for storing tags when you issue a READ REPORT=EVENT and all other events.
+                //BRIReader(this, sConnection, Reader Buffer, Event Buffer, LogOp);
+                //this.brdr = new BRIReader(this, sConnection, 1000, 1000, LogOp);
 
+                bStatus = true;
+            }
+            catch (BasicReaderException ex)
+            {
+                textBox1.Text="Không thể kết nối";
+                textBox1.ForeColor = Color.FromKnownColor(KnownColor.Red);
+                textBox1.ReadOnly = true;
+                // MessageBox.Show(ex.ToString());
+                bStatus = false;
+            }
+
+            if (brdr == null || bStatus == false)
+            {
+                //failed to create reader connection
+                bReaderOffLine = true;
+                //PostMessageToListBox1("Unable to connect to reader!");
+                // PostMessageToListBox1(sConnection);
+                return false;
+            }
+
+            //Verify that we are actually talking to the RF module.  Should return OK>
+            sMsg = this.brdr.Execute("PING");
+            if (sMsg != null)
+            {
+                if (sMsg.Equals("OK>"))
+                {
+                    //get reader firmware version
+                    sMsg = this.brdr.Execute("VER");
+                    //ParseResponseMessage(sMsg);
+                    //dataGridView2.DataSource = sMsg;
+                    //label1.Visible = true;
+
+                    SetReaderAttributes();
+                    bReaderOffLine = false;
+                    bStatus = true;
+                }
+            }
+
+            if (bStatus == false)
+            {
+                //not connected to reader
+                // PostMessageToListBox1("Unable to connect to hand held");
+                // PostMessageToListBox1(sConnection);
+                bReaderOffLine = true;
+            }
+
+            return bStatus;
+        }
+        private void SetReaderAttributes()
+        {
+            //Optional Code
+            //Some examples of how to set attributes
+            string sRsp = null;
+
+            try
+            {
+
+                brdr.Execute("ATTRIB IDTRIES=1");
+                brdr.Execute("ATTRIB ANTTRIES=1");
+                brdr.Execute("ATTRIB WRTRIES=3");
+                brdr.Execute("ATTRIB ANTS=1");
+
+                //Other examples of selecting antennas
+                //brdr.Execute("ATTRIB ANTS=1,2,3,4");
+                //brdr.Execute("ATTRIB ANTS=2,4");
+                //brdr.Execute("ATTRIB ANTS=1,3,4");
+
+                //get the list of all attributes from the reader and display them.
+                sRsp = this.brdr.Execute("ATTRIB");
+                //ParseResponseMessage(sRsp);
+            }
+            catch (Intermec.DataCollection.RFID.BasicReaderException ex)
+            {
+                MessageBox.Show("SetAttribute Exception : " + ex.Message);
+            }
+        }
     }
 }

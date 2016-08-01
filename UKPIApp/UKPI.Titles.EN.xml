@@ -3568,7 +3568,52 @@
 		<Value>Xác nhận</Value>
 	</Titles>
 	<!-- End frmNghiPhep-->
-
+  
+  <!-- Start frmnhapkhochitiet-->
+  <Titles>
+    <Name>frmnhapkhochitiet.lblTenHang</Name>
+    <Value>Tên Hàng</Value>
+  </Titles>
+  <Titles>
+    <Name>frmnhapkhochitiet.lblMaHeThong</Name>
+    <Value>Mã Hệ Thống</Value>
+  </Titles>
+  <Titles>
+    <Name>frmnhapkhochitiet.lblMaHang</Name>
+    <Value>Mã Hàng</Value>
+  </Titles>
+  <Titles>
+    <Name>frmnhapkhochitiet.lblDVT</Name>
+    <Value>Đơn Vị Tính</Value>
+  </Titles>
+  <Titles>
+    <Name>frmnhapkhochitiet.lblThanhPhan</Name>
+    <Value>Thành Phần</Value>
+  </Titles>
+  <Titles>
+    <Name>frmnhapkhochitiet.lblHamLuong</Name>
+    <Value>Hàm Lượng</Value>
+  </Titles>
+  <Titles>
+    <Name>frmnhapkhochitiet.lblHeSoAnToan</Name>
+    <Value>Hệ Số An Toàn</Value>
+  </Titles>
+  <Titles>
+    <Name>frmnhapkhochitiet.lblNhaSanXuat</Name>
+    <Value>Nhà Sản Xuất</Value>
+  </Titles>
+  <Titles>
+    <Name>frmnhapkhochitiet.lblQuocGia</Name>
+    <Value>Quốc Gia</Value>
+  </Titles>
+  <Titles>
+    <Name>frmnhapkhochitiet.lblTongTagDaDoc</Name>
+    <Value>Tổng Tag Đã Đọc</Value>
+  </Titles>
+  
+  
+  <!-- End frmnhapkhochitiet-->
+  
 	<!-- Start frmnhapkhothuoc-->
 	<Titles>
 		<Name>frmnhapkhothuoc.lblNhanVienNhap</Name>
@@ -3594,6 +3639,14 @@
 		<Name>frmnhapkhothuoc.lblDonViCungCap</Name>
 		<Value>Đơn vị cung cấp *</Value>
 	</Titles>
+  <Titles>
+    <Name>frmnhapkhothuoc.lblTinhtrangReader</Name>
+    <Value>Tình trạng kết nối RFID Reader</Value>
+  </Titles>
+  <Titles>
+    <Name>frmnhapkhothuoc.lblKho</Name>
+    <Value>Kho</Value>
+  </Titles>
 	<Titles>
 		<Name>frmnhapkhothuoc.lblMaDonViCungCap</Name>
 		<Value>Mã đơn vị cung cấp *</Value>

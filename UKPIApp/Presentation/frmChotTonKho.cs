@@ -91,7 +91,7 @@ namespace UKPI.Presentation
             var firstOrDefault = listPhongKham.FirstOrDefault(a => a.RoomID == currentKho);
             if (firstOrDefault != null)
                 txtKho.Text = firstOrDefault.RoomName;
-            ;
+            
             
     
         }

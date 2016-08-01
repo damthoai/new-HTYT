@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <dtTag>
+    <SoLuongTagDaDoc>2</SoLuongTagDaDoc>
+  </dtTag>
+  <listMa>
+    <STT>2</STT>
+    <checkBox>False</checkBox>
+    <maTag>13000000000000000000</maTag>
+    <soLuong>1</soLuong>
+    <tenReader>RFID Reader 1</tenReader>
+    <thoiGian>19:31:56 PM</thoiGian>
+  </listMa>
+  <listMa>
+    <STT>3</STT>
+    <checkBox>False</checkBox>
+    <maTag>14000000000000000000</maTag>
+    <soLuong>1</soLuong>
+    <tenReader>RFID Reader 1</tenReader>
+    <thoiGian>19:31:56 PM</thoiGian>
+  </listMa>
+</NewDataSet>

@@ -138,7 +138,7 @@ namespace UKPI.Presentation
                 List<ThongTinBenhNhan> listBenhNhan = _thongTinKhamBenhDao.SearchThongTinBenhNhan(maNhanVien, string.Empty);
                 if (listBenhNhan != null && listBenhNhan.Count == 1)
                 {
-                    txtBenhNhan.BackColor = Color.White;
+                   /* txtBenhNhan.BackColor = Color.White;
                     ThongTinBenhNhan ttbn = listBenhNhan[0];
                     txtBenhNhan.Text = ttbn.FullName;
                     txtMaNhanVien.Text = ttbn.EmployeeID;
@@ -150,7 +150,7 @@ namespace UKPI.Presentation
                     List<KhuVuc> listKhuVuc = _shareEntityDao.LoadDanhSachKhuVuc();
                     cbbBoPhan.SelectedIndex = listBoPhan.FindIndex(c => c.MaBoPhan == ttbn.BoPhan);
                     cbbGioiTinh.SelectedIndex = listGoiTinh.FindIndex(c => c.Name == ttbn.GioiTinh);
-                    cbbKhuVuc.SelectedIndex = listKhuVuc.FindIndex(c => c.TenKhuVuc == ttbn.KhuVuc);
+                    cbbKhuVuc.SelectedIndex = listKhuVuc.FindIndex(c => c.TenKhuVuc == ttbn.KhuVuc);*/
                 }
                 else
                 {
@@ -193,7 +193,7 @@ namespace UKPI.Presentation
         }
         public void SetMaBHYT(string maBHYT)
         {
-            txtMaBHYT.Text = maBHYT;
+           txtMaBHYT.Text = maBHYT;
         }
         public void SetNamSinh(string namSinh)
         {

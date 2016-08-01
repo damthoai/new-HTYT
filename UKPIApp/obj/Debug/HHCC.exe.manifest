@@ -115,14 +115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HHCC.exe" size="13897728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HHCC.exe" size="13914112">
       <assemblyIdentity name="HHCC" version="1.7.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>FvyQ43MYOqlZUHJZyvu/arxU7iE=</dsig:DigestValue>
+        <dsig:DigestValue>CyPbY/PZ1h8QakPKE3IJ6/rAVxI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -135,6 +135,30 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
         <dsig:DigestValue>cwbztk2vPLDEuW3ygfAYmvgcc/g=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Intermec.DataCollection.RFID.AdvancedBRI.dll" size="69632">
+      <assemblyIdentity name="Intermec.DataCollection.RFID.AdvancedBRI" version="4.2.0.1619" publicKeyToken="ACD169B56B6148BA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>1HyG3fZs5aP7aq1hc7nj7PA7hH4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Intermec.DataCollection.RFID.BasicBRI.dll" size="102400">
+      <assemblyIdentity name="Intermec.DataCollection.RFID.BasicBRI" version="4.2.0.1619" publicKeyToken="ACD169B56B6148BA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>22FKdNjozbylteZhjSa5wUsUWLc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -996,22 +1020,22 @@
       <dsig:DigestValue>eCS5kr04eIoTVJggwyNWOcW97Bc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="UKPI.Titles.EN.xml" size="97559" writeableType="applicationData">
+  <file name="UKPI.Titles.EN.xml" size="98952" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>qh5sj2zpw5U9wj2B2KIIxejFDcA=</dsig:DigestValue>
+      <dsig:DigestValue>Ul9hMMXAqg4fhxVHNCF1Qu2uK+w=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="UKPI.Titles.VN.xml" size="95790" writeableType="applicationData">
+  <file name="UKPI.Titles.VN.xml" size="95921" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>jxb2W9gUFUyZ7s9X1u51iceD0TQ=</dsig:DigestValue>
+      <dsig:DigestValue>rcb1sB0pZx1OOEy7L/j/013+M5g=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Unilever.jpg" size="6652">

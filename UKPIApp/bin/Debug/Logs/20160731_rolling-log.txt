@@ -1,0 +1,202 @@
+﻿2016-07-31 08:09:08,048 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:09:33,453 [9] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:11:28,410 [10] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:11:45,811 [10] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:13:53,544 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:14:06,589 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:17:24,952 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:17:49,398 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:18:25,344 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:18:45,960 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:19:18,535 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:19:51,814 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:20:37,636 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:21:00,090 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:21:36,388 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:22:14,069 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:24:17,772 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:24:41,816 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:26:04,642 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:26:21,142 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:29:33,753 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:30:39,253 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:33:30,717 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:33:52,674 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:39:20,093 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:39:53,476 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:43:26,490 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 08:43:56,301 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 08:46:20,125 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 09:16:44,104 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 09:17:02,517 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 09:17:50,539 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 09:21:10,590 [9] ERROR UKPI.DataAccessObject.clsBaseDAO - A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at UKPI.DataAccessObject.clsBaseDAO.Init() in F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\UKPIApp\DataAccessObject\clsBaseDAO.cs:line 122
+2016-07-31 09:22:55,195 [9] ERROR UKPI.DataAccessObject.clsBaseDAO - A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+System.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at UKPI.DataAccessObject.clsBaseDAO.Init() in F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\UKPIApp\DataAccessObject\clsBaseDAO.cs:line 122
+2016-07-31 09:43:03,206 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 09:43:18,137 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 09:43:39,362 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 09:44:54,430 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 09:45:16,699 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 09:45:47,774 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 09:46:02,092 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 09:50:04,796 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 09:50:17,890 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 09:50:47,896 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 09:51:00,097 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 09:52:24,055 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 09:52:34,431 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 10:04:55,099 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:05:55,334 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:06:00,115 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 10:10:41,897 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:10:47,726 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 10:12:33,761 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:12:41,713 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 10:17:04,048 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:17:10,771 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 10:21:23,665 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:21:49,952 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 10:22:24,142 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:22:31,640 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 10:27:46,024 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:28:03,677 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 10:28:27,844 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:28:39,420 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 10:43:03,635 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:43:07,960 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 10:44:56,938 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:47:36,143 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:48:01,479 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 10:50:12,777 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 10:50:55,358 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 11:02:52,375 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 11:04:19,057 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 11:04:32,577 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 11:08:55,046 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 11:09:10,227 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 11:10:48,991 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 11:11:47,786 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 11:15:11,012 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 11:15:20,991 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 11:15:42,738 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 11:15:51,527 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 11:30:03,752 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 11:30:17,872 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 11:42:21,514 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 11:42:25,447 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 11:53:12,752 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 11:53:25,893 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 12:07:52,913 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 12:08:20,438 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 12:09:27,023 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 12:09:38,151 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 12:10:28,968 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 12:10:40,288 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 12:13:13,042 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 12:13:16,676 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 12:16:47,700 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 12:17:05,705 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 12:20:04,623 [12] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 12:20:19,096 [12] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 12:22:46,857 [10] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 12:51:21,470 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 12:51:31,748 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 12:52:36,704 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 12:53:07,918 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 12:54:13,802 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 12:55:01,322 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 12:56:40,440 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 12:57:20,417 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 13:04:45,958 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:05:05,337 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 13:13:38,235 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:14:50,951 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 13:17:19,329 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:17:39,981 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 13:23:15,169 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:24:34,833 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 13:29:57,387 [10] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:30:02,399 [10] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 13:49:28,705 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:49:41,751 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 13:50:52,871 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:52:59,429 [10] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:53:12,481 [10] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 13:54:25,133 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:55:18,376 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 13:56:37,906 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:57:10,651 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 13:58:41,227 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:59:14,452 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 13:59:41,692 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 14:02:25,078 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 14:02:39,258 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 14:03:41,673 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 14:04:49,199 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 16:28:33,582 [10] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 16:28:53,569 [10] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 19:48:07,090 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 19:49:14,731 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 19:50:36,839 [10] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 19:53:09,585 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 19:53:20,871 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 19:55:19,102 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 19:56:33,397 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 20:04:30,401 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 21:25:17,161 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 21:41:23,880 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 21:42:57,458 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 21:43:58,134 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 21:44:34,660 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 21:44:44,786 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 21:45:27,078 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 21:47:37,196 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 21:50:06,721 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 21:53:55,179 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 22:01:08,363 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 22:01:26,215 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 22:03:02,738 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 22:03:11,038 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 22:10:56,523 [12] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 22:11:03,015 [12] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 22:11:31,835 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 22:11:39,248 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 22:12:02,262 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 22:14:18,144 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 22:14:26,711 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-07-31 22:18:49,616 [12] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-07-31 22:19:45,300 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
