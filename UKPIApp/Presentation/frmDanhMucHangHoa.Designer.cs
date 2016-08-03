@@ -72,7 +72,7 @@
             this.cbBaoHiem = new System.Windows.Forms.CheckBox();
             this.cbbDonViTinh = new System.Windows.Forms.ComboBox();
             this.txtTenThanhPhanThuoc = new System.Windows.Forms.TextBox();
-            this.txtSoTT = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblBaoHiem = new System.Windows.Forms.Label();
             this.lblDonViTinh = new System.Windows.Forms.Label();
             this.lblTenThanhPhanThuoc = new System.Windows.Forms.Label();
@@ -86,9 +86,9 @@
             this.TenDonViSYT_BV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayHieuLuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhanNhomTheoTCHTVaTCCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaThuocYTeHienThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MedicineName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenThanhPhanThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HamLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STTTheoDMTCuaBYT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BaoHiem = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -98,7 +98,7 @@
             this.QuocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeSoAnToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NhomThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoatDong = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdToaThuoc)).BeginInit();
@@ -149,7 +149,7 @@
             this.groupBox1.Controls.Add(this.cbBaoHiem);
             this.groupBox1.Controls.Add(this.cbbDonViTinh);
             this.groupBox1.Controls.Add(this.txtTenThanhPhanThuoc);
-            this.groupBox1.Controls.Add(this.txtSoTT);
+            this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.lblBaoHiem);
             this.groupBox1.Controls.Add(this.lblDonViTinh);
             this.groupBox1.Controls.Add(this.lblTenThanhPhanThuoc);
@@ -200,6 +200,7 @@
             this.ckbChonNgayHieuLuc.TabIndex = 41;
             this.ckbChonNgayHieuLuc.Text = "Chọn ngày hiệu lực";
             this.ckbChonNgayHieuLuc.UseVisualStyleBackColor = true;
+            this.ckbChonNgayHieuLuc.Visible = false;
             // 
             // lblsTenThuoc
             // 
@@ -216,6 +217,7 @@
             this.dtpNgayHieuLuc.Name = "dtpNgayHieuLuc";
             this.dtpNgayHieuLuc.Size = new System.Drawing.Size(142, 20);
             this.dtpNgayHieuLuc.TabIndex = 40;
+            this.dtpNgayHieuLuc.Visible = false;
             // 
             // txtsMaThuoc
             // 
@@ -226,11 +228,10 @@
             // 
             // txtNhomThuoc
             // 
-            this.txtNhomThuoc.Location = new System.Drawing.Point(928, 174);
+            this.txtNhomThuoc.Location = new System.Drawing.Point(432, 48);
             this.txtNhomThuoc.Name = "txtNhomThuoc";
             this.txtNhomThuoc.Size = new System.Drawing.Size(195, 20);
             this.txtNhomThuoc.TabIndex = 39;
-            this.txtNhomThuoc.Visible = false;
             // 
             // lblsMaThuoc
             // 
@@ -244,16 +245,15 @@
             // lblNhomThuoc
             // 
             this.lblNhomThuoc.AutoSize = true;
-            this.lblNhomThuoc.Location = new System.Drawing.Point(832, 174);
+            this.lblNhomThuoc.Location = new System.Drawing.Point(362, 47);
             this.lblNhomThuoc.Name = "lblNhomThuoc";
-            this.lblNhomThuoc.Size = new System.Drawing.Size(65, 13);
+            this.lblNhomThuoc.Size = new System.Drawing.Size(64, 13);
             this.lblNhomThuoc.TabIndex = 38;
-            this.lblNhomThuoc.Text = "Nhóm thuốc";
-            this.lblNhomThuoc.Visible = false;
+            this.lblNhomThuoc.Text = "Nhóm Hàng";
             // 
             // txtHeSoAnToan
             // 
-            this.txtHeSoAnToan.Location = new System.Drawing.Point(145, 176);
+            this.txtHeSoAnToan.Location = new System.Drawing.Point(432, 19);
             this.txtHeSoAnToan.Name = "txtHeSoAnToan";
             this.txtHeSoAnToan.Size = new System.Drawing.Size(140, 20);
             this.txtHeSoAnToan.TabIndex = 6;
@@ -261,7 +261,7 @@
             // lblHeSoAnToan
             // 
             this.lblHeSoAnToan.AutoSize = true;
-            this.lblHeSoAnToan.Location = new System.Drawing.Point(65, 178);
+            this.lblHeSoAnToan.Location = new System.Drawing.Point(352, 21);
             this.lblHeSoAnToan.Name = "lblHeSoAnToan";
             this.lblHeSoAnToan.Size = new System.Drawing.Size(74, 13);
             this.lblHeSoAnToan.TabIndex = 36;
@@ -270,11 +270,14 @@
             // cbHoatDong
             // 
             this.cbHoatDong.AutoSize = true;
+            this.cbHoatDong.Checked = true;
+            this.cbHoatDong.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbHoatDong.Location = new System.Drawing.Point(432, 154);
             this.cbHoatDong.Name = "cbHoatDong";
             this.cbHoatDong.Size = new System.Drawing.Size(15, 14);
             this.cbHoatDong.TabIndex = 12;
             this.cbHoatDong.UseVisualStyleBackColor = true;
+            this.cbHoatDong.Visible = false;
             // 
             // txtQuocGia
             // 
@@ -282,6 +285,7 @@
             this.txtQuocGia.Name = "txtQuocGia";
             this.txtQuocGia.Size = new System.Drawing.Size(147, 20);
             this.txtQuocGia.TabIndex = 11;
+            this.txtQuocGia.Visible = false;
             // 
             // btnLuu
             // 
@@ -309,6 +313,7 @@
             this.txtNhaSanXuat.Name = "txtNhaSanXuat";
             this.txtNhaSanXuat.Size = new System.Drawing.Size(147, 20);
             this.txtNhaSanXuat.TabIndex = 10;
+            this.txtNhaSanXuat.Visible = false;
             // 
             // btnUpdate
             // 
@@ -326,6 +331,7 @@
             this.txtDangBaoChe.Name = "txtDangBaoChe";
             this.txtDangBaoChe.Size = new System.Drawing.Size(147, 20);
             this.txtDangBaoChe.TabIndex = 9;
+            this.txtDangBaoChe.Visible = false;
             // 
             // txtSoDangKy
             // 
@@ -333,6 +339,7 @@
             this.txtSoDangKy.Name = "txtSoDangKy";
             this.txtSoDangKy.Size = new System.Drawing.Size(147, 20);
             this.txtSoDangKy.TabIndex = 8;
+            this.txtSoDangKy.Visible = false;
             // 
             // txtHamLuong
             // 
@@ -340,6 +347,7 @@
             this.txtHamLuong.Name = "txtHamLuong";
             this.txtHamLuong.Size = new System.Drawing.Size(147, 20);
             this.txtHamLuong.TabIndex = 7;
+            this.txtHamLuong.Visible = false;
             // 
             // lblHoatDong
             // 
@@ -349,6 +357,7 @@
             this.lblHoatDong.Size = new System.Drawing.Size(59, 13);
             this.lblHoatDong.TabIndex = 29;
             this.lblHoatDong.Text = "Hoạt Động";
+            this.lblHoatDong.Visible = false;
             // 
             // lblQuocGia
             // 
@@ -358,6 +367,7 @@
             this.lblQuocGia.Size = new System.Drawing.Size(50, 13);
             this.lblQuocGia.TabIndex = 28;
             this.lblQuocGia.Text = "Quốc gia";
+            this.lblQuocGia.Visible = false;
             // 
             // lblNhaSanXuat
             // 
@@ -367,6 +377,7 @@
             this.lblNhaSanXuat.Size = new System.Drawing.Size(70, 13);
             this.lblNhaSanXuat.TabIndex = 27;
             this.lblNhaSanXuat.Text = "Nhà sản xuất";
+            this.lblNhaSanXuat.Visible = false;
             // 
             // lblDangBaoChe
             // 
@@ -376,6 +387,7 @@
             this.lblDangBaoChe.Size = new System.Drawing.Size(104, 13);
             this.lblDangBaoChe.TabIndex = 26;
             this.lblDangBaoChe.Text = "Địa chỉ nhà sản xuất";
+            this.lblDangBaoChe.Visible = false;
             // 
             // lblSoDangKy
             // 
@@ -385,6 +397,7 @@
             this.lblSoDangKy.Size = new System.Drawing.Size(101, 13);
             this.lblSoDangKy.TabIndex = 25;
             this.lblSoDangKy.Text = "Số DK hoặc GPNK ";
+            this.lblSoDangKy.Visible = false;
             // 
             // lblHamLuong
             // 
@@ -394,6 +407,7 @@
             this.lblHamLuong.Size = new System.Drawing.Size(64, 13);
             this.lblHamLuong.TabIndex = 24;
             this.lblHamLuong.Text = "Trọng lượng";
+            this.lblHamLuong.Visible = false;
             // 
             // txtGiaThucBan
             // 
@@ -433,6 +447,7 @@
             this.txtSttMHTKQDT.Name = "txtSttMHTKQDT";
             this.txtSttMHTKQDT.Size = new System.Drawing.Size(142, 20);
             this.txtSttMHTKQDT.TabIndex = 18;
+            this.txtSttMHTKQDT.Visible = false;
             // 
             // lblGiaThucBan
             // 
@@ -472,6 +487,7 @@
             this.lblNgayHieuLuc.Size = new System.Drawing.Size(72, 13);
             this.lblNgayHieuLuc.TabIndex = 14;
             this.lblNgayHieuLuc.Text = "Ngày hiệu lực";
+            this.lblNgayHieuLuc.Visible = false;
             // 
             // lblTenDV
             // 
@@ -491,6 +507,7 @@
             this.lblSTTMHTKQDT.Size = new System.Drawing.Size(186, 13);
             this.lblSTTMHTKQDT.TabIndex = 12;
             this.lblSTTMHTKQDT.Text = "STT mã hóa theo KQĐT (số QĐ.STT)";
+            this.lblSTTMHTKQDT.Visible = false;
             // 
             // cbBaoHiem
             // 
@@ -519,14 +536,16 @@
             this.txtTenThanhPhanThuoc.Name = "txtTenThanhPhanThuoc";
             this.txtTenThanhPhanThuoc.Size = new System.Drawing.Size(140, 20);
             this.txtTenThanhPhanThuoc.TabIndex = 3;
+            this.txtTenThanhPhanThuoc.Visible = false;
             // 
-            // txtSoTT
+            // txtDescription
             // 
-            this.txtSoTT.Location = new System.Drawing.Point(145, 72);
-            this.txtSoTT.Name = "txtSoTT";
-            this.txtSoTT.Size = new System.Drawing.Size(140, 20);
-            this.txtSoTT.TabIndex = 2;
-            this.txtSoTT.Visible = false;
+            this.txtDescription.Location = new System.Drawing.Point(145, 72);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(140, 20);
+            this.txtDescription.TabIndex = 2;
+            this.txtDescription.Visible = false;
             // 
             // lblBaoHiem
             // 
@@ -555,15 +574,16 @@
             this.lblTenThanhPhanThuoc.Size = new System.Drawing.Size(111, 13);
             this.lblTenThanhPhanThuoc.TabIndex = 5;
             this.lblTenThanhPhanThuoc.Text = "Nguyên liệu hàng hóa";
+            this.lblTenThanhPhanThuoc.Visible = false;
             // 
             // lblSoTT
             // 
             this.lblSoTT.AutoSize = true;
-            this.lblSoTT.Location = new System.Drawing.Point(3, 76);
+            this.lblSoTT.Location = new System.Drawing.Point(88, 75);
             this.lblSoTT.Name = "lblSoTT";
-            this.lblSoTT.Size = new System.Drawing.Size(136, 13);
+            this.lblSoTT.Size = new System.Drawing.Size(46, 13);
             this.lblSoTT.TabIndex = 4;
-            this.lblSoTT.Text = "STT theo DMT Của BHYT ";
+            this.lblSoTT.Text = "Miêu Tả";
             this.lblSoTT.Visible = false;
             // 
             // txtTenThuoc
@@ -619,9 +639,9 @@
             this.TenDonViSYT_BV,
             this.NgayHieuLuc,
             this.PhanNhomTheoTCHTVaTCCN,
-            this.MaThuocYTeHienThi,
-            this.MedicineName,
-            this.TenThanhPhanThuoc,
+            this.ProductID,
+            this.ProductName,
+            this.Description,
             this.HamLuong,
             this.STTTheoDMTCuaBYT,
             this.BaoHiem,
@@ -631,7 +651,7 @@
             this.QuocGia,
             this.TenDonViTinh,
             this.HeSoAnToan,
-            this.NhomThuoc,
+            this.ProductGroup,
             this.HoatDong});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -667,6 +687,7 @@
             this.NgayHieuLuc.DataPropertyName = "NgayHieuLuc";
             this.NgayHieuLuc.HeaderText = "Ngày hiệu lực";
             this.NgayHieuLuc.Name = "NgayHieuLuc";
+            this.NgayHieuLuc.Visible = false;
             // 
             // PhanNhomTheoTCHTVaTCCN
             // 
@@ -675,30 +696,31 @@
             this.PhanNhomTheoTCHTVaTCCN.Name = "PhanNhomTheoTCHTVaTCCN";
             this.PhanNhomTheoTCHTVaTCCN.Visible = false;
             // 
-            // MaThuocYTeHienThi
+            // ProductID
             // 
-            this.MaThuocYTeHienThi.DataPropertyName = "MaThuocYTeHienThi";
-            this.MaThuocYTeHienThi.HeaderText = "Mã Hàng";
-            this.MaThuocYTeHienThi.Name = "MaThuocYTeHienThi";
-            this.MaThuocYTeHienThi.ReadOnly = true;
-            this.MaThuocYTeHienThi.Width = 80;
+            this.ProductID.DataPropertyName = "ProductID";
+            this.ProductID.HeaderText = "Mã Hàng";
+            this.ProductID.Name = "ProductID";
+            this.ProductID.ReadOnly = true;
+            this.ProductID.Width = 80;
             // 
-            // MedicineName
+            // ProductName
             // 
-            this.MedicineName.DataPropertyName = "MedicineName";
-            this.MedicineName.HeaderText = "Tên Hàng Hóa";
-            this.MedicineName.Name = "MedicineName";
-            this.MedicineName.ReadOnly = true;
-            this.MedicineName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.MedicineName.Width = 140;
+            this.ProductName.DataPropertyName = "ProductName";
+            this.ProductName.HeaderText = "Tên Hàng Hóa";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            this.ProductName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ProductName.Width = 140;
             // 
-            // TenThanhPhanThuoc
+            // Description
             // 
-            this.TenThanhPhanThuoc.DataPropertyName = "TenThanhPhanThuoc";
-            this.TenThanhPhanThuoc.HeaderText = "Thành phần";
-            this.TenThanhPhanThuoc.Name = "TenThanhPhanThuoc";
-            this.TenThanhPhanThuoc.ReadOnly = true;
-            this.TenThanhPhanThuoc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Miêu Tả";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Description.Width = 300;
             // 
             // HamLuong
             // 
@@ -707,6 +729,7 @@
             this.HamLuong.Name = "HamLuong";
             this.HamLuong.ReadOnly = true;
             this.HamLuong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.HamLuong.Visible = false;
             this.HamLuong.Width = 90;
             // 
             // STTTheoDMTCuaBYT
@@ -735,6 +758,7 @@
             this.SoDKHoacGPKD.Name = "SoDKHoacGPKD";
             this.SoDKHoacGPKD.ReadOnly = true;
             this.SoDKHoacGPKD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SoDKHoacGPKD.Visible = false;
             this.SoDKHoacGPKD.Width = 180;
             // 
             // DangBaoCheDuongUong
@@ -744,6 +768,7 @@
             this.DangBaoCheDuongUong.Name = "DangBaoCheDuongUong";
             this.DangBaoCheDuongUong.ReadOnly = true;
             this.DangBaoCheDuongUong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.DangBaoCheDuongUong.Visible = false;
             this.DangBaoCheDuongUong.Width = 180;
             // 
             // NhaSanXuat
@@ -753,6 +778,7 @@
             this.NhaSanXuat.Name = "NhaSanXuat";
             this.NhaSanXuat.ReadOnly = true;
             this.NhaSanXuat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.NhaSanXuat.Visible = false;
             // 
             // QuocGia
             // 
@@ -761,6 +787,7 @@
             this.QuocGia.Name = "QuocGia";
             this.QuocGia.ReadOnly = true;
             this.QuocGia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.QuocGia.Visible = false;
             this.QuocGia.Width = 60;
             // 
             // TenDonViTinh
@@ -780,15 +807,14 @@
             this.HeSoAnToan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.HeSoAnToan.Width = 90;
             // 
-            // NhomThuoc
+            // ProductGroup
             // 
-            this.NhomThuoc.DataPropertyName = "NhomThuoc";
-            this.NhomThuoc.HeaderText = "Nhóm thuốc";
-            this.NhomThuoc.Name = "NhomThuoc";
-            this.NhomThuoc.ReadOnly = true;
-            this.NhomThuoc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.NhomThuoc.Visible = false;
-            this.NhomThuoc.Width = 90;
+            this.ProductGroup.DataPropertyName = "ProductGroup";
+            this.ProductGroup.HeaderText = "Nhóm Hàng";
+            this.ProductGroup.Name = "ProductGroup";
+            this.ProductGroup.ReadOnly = true;
+            this.ProductGroup.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ProductGroup.Width = 90;
             // 
             // HoatDong
             // 
@@ -797,6 +823,7 @@
             this.HoatDong.Name = "HoatDong";
             this.HoatDong.ReadOnly = true;
             this.HoatDong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.HoatDong.Visible = false;
             this.HoatDong.Width = 80;
             // 
             // frmDanhMucHangHoa
@@ -854,7 +881,7 @@
         private System.Windows.Forms.CheckBox cbBaoHiem;
         private System.Windows.Forms.ComboBox cbbDonViTinh;
         private System.Windows.Forms.TextBox txtTenThanhPhanThuoc;
-        private System.Windows.Forms.TextBox txtSoTT;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label lblBaoHiem;
         private System.Windows.Forms.Label lblDonViTinh;
         private System.Windows.Forms.Label lblTenThanhPhanThuoc;
@@ -873,9 +900,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDonViSYT_BV;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayHieuLuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhanNhomTheoTCHTVaTCCN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaThuocYTeHienThi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MedicineName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenThanhPhanThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn HamLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn STTTheoDMTCuaBYT;
         private System.Windows.Forms.DataGridViewCheckBoxColumn BaoHiem;
@@ -885,7 +912,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QuocGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDonViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn HeSoAnToan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NhomThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductGroup;
         private System.Windows.Forms.DataGridViewCheckBoxColumn HoatDong;
     }
 }

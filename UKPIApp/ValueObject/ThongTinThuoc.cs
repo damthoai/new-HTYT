@@ -9,7 +9,7 @@ namespace UKPI.ValueObject
     {
         public string MedicineID { get; set; }
         public string MedicineName { get; set; }
-        public string Description { get; set; }
+        
         public DateTime CreatedDate { get; set; }
         public string CreatedBy { get; set; }
         public DateTime LastUpdatedDate { get; set; }
@@ -34,7 +34,7 @@ namespace UKPI.ValueObject
         public string DangBaoCheDuongUong { get; set; }
         public string NhaSanXuat { get; set; }
         public string QuocGia { get; set; }
-        public int DonViTinh { get; set; }
+        
         public bool HoatDong { get; set; }
         public int CachUong { get; set; }
         public int Flag { get; set; }
@@ -43,7 +43,7 @@ namespace UKPI.ValueObject
         public string MaThuocYTe { get; set; }
         public string MaThuocYTeHienThi { get; set; }
         public string CachDungChiTiet { get; set; }
-
+        
         public int HeSoAnToan { get; set; }
         public string NhomThuoc { get; set; }
 
@@ -52,6 +52,13 @@ namespace UKPI.ValueObject
         public string NgayHieuLuc { get; set; }
         public string PhanNhomTheoTCHTVaTCCN { get; set; }
 
+        //FOR FORM QUAN LY DANH MUC HANG HOA
 
+        public string SysID { get; set; }
+        public string ProductID { get; set; }
+        public string ProductName { get; set; }
+        public string ProductGroup { get; set; }
+        public int DonViTinh { get; set; }
+        public string Description { get; set; }
     }
 }

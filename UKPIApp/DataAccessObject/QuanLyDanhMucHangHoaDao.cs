@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Windows.Forms;
 using System.Text;
 using UKPI.Utils;
 using UKPI.ValueObject;
@@ -14,7 +15,7 @@ namespace UKPI.DataAccessObject
     {
         private static readonly ILog log = log4net.LogManager.GetLogger(typeof(QuanLyThuocDao));
         private const string HUFS_SelectDanhMucThuoc = "HUFS_SelectDanhMucThuoc";
-        private const string LF_SelectDanhMucHangHoa = "LF_SelectDanhMucHangHoa";
+        private const string p_LF_SelectDanhMucHangHoa = "p_LF_SelectDanhMucHangHoa";
         private const string HUFS_DanhMucThuoc = "HUFS_DanhMucThuoc";
         private const string p_HUFS_GetAllChinhSachGia = "p_HUFS_GetAllChinhSachGiaNew";
         private const string p_HUFS_GetMaxMaChinhSachGia = "p_HUFS_GetMaxMaChinhSachGia";
@@ -25,6 +26,7 @@ namespace UKPI.DataAccessObject
         private const string p_LF_CheckHangHoaExist = "p_LF_CheckHangHoaExist";
         //private const string p_HUFS_ProcessDanhMucThuoc = "p_HUFS_ProcessDanhMucThuoc";
         private const string p_LF_ProcessDanhMucHangHoa = "p_LF_ProcessDanhMucHangHoa";
+        private const string p_LF_Process_TBL_PRODUCT = "p_LF_Process_TBL_PRODUCT";
         private const string p_HUFS_ProcessChinhSachGiaChiTiet = "p_HUFS_ProcessChinhSachGiaChiTiet";
         private const string p_HUFS_ProcessMarkDeleteChinhSachGiaChiTiet = "p_HUFS_ProcessMarkDeleteChinhSachGiaChiTiet";
         private const string p_HUFS_CheckOverlapChinhSachGia = "p_HUFS_CheckOverlapChinhSachGia";
@@ -73,6 +75,32 @@ namespace UKPI.DataAccessObject
                 return false;
             }
         }
+
+        public bool LuuCapNhatThongTinThuoc_tbl_product(ThongTinThuoc thongTinThuoc)
+        {
+            try
+            {
+                SqlParameter[] Params = new SqlParameter[9];
+                Params[0] = new SqlParameter("@SysID", thongTinThuoc.SysID);
+                Params[1] = new SqlParameter("@ProductID", thongTinThuoc.ProductID);
+                Params[2] = new SqlParameter("@ProductName", thongTinThuoc.ProductName);
+                Params[3] = new SqlParameter("@Description", thongTinThuoc.Description);
+                Params[4] = new SqlParameter("@CreatedBy", thongTinThuoc.CreatedBy);
+                Params[5] = new SqlParameter("@LastUpdatedBy", thongTinThuoc.LastUpdatedBy);
+                Params[6] = new SqlParameter("@DonViTinh", thongTinThuoc.DonViTinh);
+                Params[7] = new SqlParameter("@HeSoAnToan", thongTinThuoc.HeSoAnToan);
+                Params[8] = new SqlParameter("@ProductGroup", thongTinThuoc.ProductGroup);
+                
+
+                DataServices.ExecuteStoredProcedure(CommandType.StoredProcedure, p_LF_Process_TBL_PRODUCT, Params);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
         public int CheckThuocExist(string maThuocYTe, bool baoHiem)
         {
             try
@@ -95,7 +123,30 @@ namespace UKPI.DataAccessObject
                 return -1;
             }
         }
-        public List<ThongTinThuoc> LoadDanhMucHangHoa(string maThuocYTe, string tenThuoc)
+
+        public int CheckMaHangExist(string ProductID)
+        {
+            try
+            {
+                SqlParameter[] Params = new SqlParameter[1];
+                Params[0] = new SqlParameter("@ProductID", ProductID);
+                
+                int soLuong = -1;
+                var dtResult = DataServices.ExecuteDataTable(CommandType.StoredProcedure, p_LF_CheckHangHoaExist, Params);
+                foreach (DataRow dr in dtResult.Rows)
+                {
+                    soLuong = int.Parse(dr["Result"].ToString());
+                    break;
+                }
+                return soLuong;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                return -1;
+            }
+        }
+        public List<ThongTinThuoc> LoadDanhMucHangHoa(string ProductID, string ProductName)
         {
             //try
             //{
@@ -111,13 +162,15 @@ namespace UKPI.DataAccessObject
             try
             {
                 SqlParameter[] Params = new SqlParameter[2];
-                Params[0] = new SqlParameter("@MaThuocYTe", maThuocYTe);
-                Params[1] = new SqlParameter("@TenThuoc", tenThuoc);
-                var dtResult = DataServices.ExecuteDataTable(CommandType.StoredProcedure, LF_SelectDanhMucHangHoa,Params);
+                Params[0] = new SqlParameter("@ProductID", ProductID);
+                Params[1] = new SqlParameter("@ProductName", ProductName);
+                var dtResult = DataServices.ExecuteDataTable(CommandType.StoredProcedure, p_LF_SelectDanhMucHangHoa,Params);
                 return this.ConvertDataTableToList<ThongTinThuoc>(dtResult);
+                
             }
             catch (Exception ex)
             {
+                
                 log.Error(ex.Message, ex);
                 return null;
             }

@@ -78,11 +78,13 @@ namespace UKPI.Presentation
             grdToaThuoc.DataSource = listThuoc;
         }*/
 
-        private void LoadDanhMucHangHoa(string maThuocYTe, string tenThuoc)
+        private void LoadDanhMucHangHoa(string ProductID, string ProductName)
         {
             // ThongTinBenhNhan ttNhanVien = _thongTinKhamBenhDao.GetThongTinBenhNhan(clsSystemConfig.UserName);
-            listThuoc = _QuanLyDanhMucHangHoaDao.LoadDanhMucHangHoa(maThuocYTe, tenThuoc);
+            listThuoc = _QuanLyDanhMucHangHoaDao.LoadDanhMucHangHoa(ProductID, ProductName);            
             grdToaThuoc.DataSource = listThuoc;
+            //grdToaThuoc.Rows.Add(new object[] { ProductID.ToString(), "1", "12000000000000000000", "1", "RFID Reader 1", string.Format("{0:HH:mm:ss tt}", DateTime.Now) });
+
         }
 
 
@@ -115,74 +117,74 @@ namespace UKPI.Presentation
             ThongTinThuoc thongTinThuoc = new ThongTinThuoc();
             if (isNew)
             {
-                thongTinThuoc.MedicineID = string.Empty;
+                thongTinThuoc.SysID = string.Empty;
                 thongTinThuoc.CreatedBy = clsSystemConfig.UserName;
             }
             else
             {
-                thongTinThuoc.MedicineID = selectedThuoc.MedicineID;
+                thongTinThuoc.SysID = selectedThuoc.SysID;
                 thongTinThuoc.CreatedBy = string.Empty;
             }
-            thongTinThuoc.MaThuocYTe = txtMaThuoc.Text;
-            thongTinThuoc.MedicineName = txtTenThuoc.Text;
-            thongTinThuoc.STTTheoDMTCuaBYT = txtSoTT.Text;
-            thongTinThuoc.TenThanhPhanThuoc = txtTenThanhPhanThuoc.Text;
+            thongTinThuoc.ProductID = txtMaThuoc.Text;
+            thongTinThuoc.ProductName = txtTenThuoc.Text;
+            thongTinThuoc.Description = txtDescription.Text;
+           // thongTinThuoc.TenThanhPhanThuoc = txtTenThanhPhanThuoc.Text;
             thongTinThuoc.DonViTinh = (int)cbbDonViTinh.SelectedValue;
-            thongTinThuoc.BaoHiem = cbBaoHiem.Checked;
+           // thongTinThuoc.BaoHiem = cbBaoHiem.Checked;
 
 
-            thongTinThuoc.GiaDNMua = decimal.Parse("0");
-            thongTinThuoc.GiaDNMuaVAT = decimal.Parse("0");
-            thongTinThuoc.GiaThucMua = decimal.Parse("0");
-            thongTinThuoc.GiaDNBan = decimal.Parse("0");
-            thongTinThuoc.GiaDNBanVAT = decimal.Parse("0");
-            thongTinThuoc.GiaThucBan = decimal.Parse("0");
+            //thongTinThuoc.GiaDNMua = decimal.Parse("0");
+            //thongTinThuoc.GiaDNMuaVAT = decimal.Parse("0");
+            //thongTinThuoc.GiaThucMua = decimal.Parse("0");
+            //thongTinThuoc.GiaDNBan = decimal.Parse("0");
+            //thongTinThuoc.GiaDNBanVAT = decimal.Parse("0");
+            //thongTinThuoc.GiaThucBan = decimal.Parse("0");
 
-            thongTinThuoc.HamLuong = txtHamLuong.Text;
-            thongTinThuoc.SoDKHoacGPKD = txtSoDangKy.Text;
-            thongTinThuoc.DangBaoCheDuongUong = txtDangBaoChe.Text;
-            thongTinThuoc.NhaSanXuat = txtNhaSanXuat.Text;
-            thongTinThuoc.QuocGia = txtQuocGia.Text;
-            thongTinThuoc.HoatDong = cbHoatDong.Checked;
+            //thongTinThuoc.HamLuong = txtHamLuong.Text;
+            //thongTinThuoc.SoDKHoacGPKD = txtSoDangKy.Text;
+            //thongTinThuoc.DangBaoCheDuongUong = txtDangBaoChe.Text;
+            //thongTinThuoc.NhaSanXuat = txtNhaSanXuat.Text;
+            //thongTinThuoc.QuocGia = txtQuocGia.Text;
+           // thongTinThuoc.HoatDong = cbHoatDong.Checked;
             thongTinThuoc.LastUpdatedBy = clsSystemConfig.UserName;
             thongTinThuoc.HeSoAnToan = int.Parse(txtHeSoAnToan.Text);
-            thongTinThuoc.NhomThuoc = txtNhomThuoc.Text;
+            thongTinThuoc.ProductGroup = txtNhomThuoc.Text;
             //thongTinThuoc.CachUong = Int16.Parse(cboCachDung.SelectedValue.ToString());
 
-            thongTinThuoc.SttMaHoaTheoKQDTSoQDStt = txtSttMHTKQDT.Text;
-            thongTinThuoc.PhanNhomTheoTCHTVaTCCN = txtPhanNhom.Text;
-            thongTinThuoc.TenDonViSYT_BV = txtDonVi.Text;
-            thongTinThuoc.NgayHieuLuc = ckbChonNgayHieuLuc.Checked ? dtpNgayHieuLuc.Value.ToString("yyyy-MM-dd") : string.Empty;
+            //thongTinThuoc.SttMaHoaTheoKQDTSoQDStt = txtSttMHTKQDT.Text;
+            //thongTinThuoc.PhanNhomTheoTCHTVaTCCN = txtPhanNhom.Text;
+            //thongTinThuoc.TenDonViSYT_BV = txtDonVi.Text;
+            //thongTinThuoc.NgayHieuLuc = ckbChonNgayHieuLuc.Checked ? dtpNgayHieuLuc.Value.ToString("yyyy-MM-dd") : string.Empty;
 
             return thongTinThuoc;
         }
 
         private void LoadThongTinThuocToForm(ThongTinThuoc selectedThuoc)
         {
-            txtMaThuoc.Text = selectedThuoc.MaThuocYTe;
-            txtTenThuoc.Text = selectedThuoc.MedicineName;
-            txtSoTT.Text = selectedThuoc.STTTheoDMTCuaBYT;
-            txtTenThanhPhanThuoc.Text = selectedThuoc.TenThanhPhanThuoc;
+            txtMaThuoc.Text = selectedThuoc.ProductID;
+            txtTenThuoc.Text = selectedThuoc.ProductName;
+            txtDescription.Text = selectedThuoc.Description;
+            //txtTenThanhPhanThuoc.Text = selectedThuoc.TenThanhPhanThuoc;
             cbbDonViTinh.SelectedValue = selectedThuoc.DonViTinh;
-            cbBaoHiem.Checked = selectedThuoc.BaoHiem;
+            //cbBaoHiem.Checked = selectedThuoc.BaoHiem;
 
-            dtpNgayHieuLuc.Value = selectedThuoc.NgayHieuLuc.Trim() == "" ? DateTime.Now : DateTime.Parse(selectedThuoc.NgayHieuLuc);
-            ckbChonNgayHieuLuc.Checked = selectedThuoc.NgayHieuLuc.Trim() != "";
-            txtSttMHTKQDT.Text = selectedThuoc.SttMaHoaTheoKQDTSoQDStt;
-            txtDonVi.Text = selectedThuoc.TenDonViSYT_BV;
-            txtPhanNhom.Text = selectedThuoc.PhanNhomTheoTCHTVaTCCN;
-            cboCachDung.SelectedValue = selectedThuoc.CachUong;
+           // dtpNgayHieuLuc.Value = selectedThuoc.NgayHieuLuc.Trim() == "" ? DateTime.Now : DateTime.Parse(selectedThuoc.NgayHieuLuc);
+            //ckbChonNgayHieuLuc.Checked = selectedThuoc.NgayHieuLuc.Trim() != "";
+           // txtSttMHTKQDT.Text = selectedThuoc.SttMaHoaTheoKQDTSoQDStt;
+           // txtDonVi.Text = selectedThuoc.TenDonViSYT_BV;
+           // txtPhanNhom.Text = selectedThuoc.PhanNhomTheoTCHTVaTCCN;
+          //  cboCachDung.SelectedValue = selectedThuoc.CachUong;
 
-            txtGiaDNBanVAT.Text = selectedThuoc.GiaDNBanVAT.ToString();
-            txtGiaThucBan.Text = selectedThuoc.GiaThucBan.ToString();
-            txtHamLuong.Text = selectedThuoc.HamLuong;
-            txtSoDangKy.Text = selectedThuoc.SoDKHoacGPKD;
-            txtDangBaoChe.Text = selectedThuoc.DangBaoCheDuongUong;
-            txtNhaSanXuat.Text = selectedThuoc.NhaSanXuat;
-            txtQuocGia.Text = selectedThuoc.QuocGia;
-            cbHoatDong.Checked = selectedThuoc.HoatDong;
+           // txtGiaDNBanVAT.Text = selectedThuoc.GiaDNBanVAT.ToString();
+           // txtGiaThucBan.Text = selectedThuoc.GiaThucBan.ToString();
+          //  txtHamLuong.Text = selectedThuoc.HamLuong;
+          //  txtSoDangKy.Text = selectedThuoc.SoDKHoacGPKD;
+          //  txtDangBaoChe.Text = selectedThuoc.DangBaoCheDuongUong;
+          //  txtNhaSanXuat.Text = selectedThuoc.NhaSanXuat;
+          //  txtQuocGia.Text = selectedThuoc.QuocGia;
+          //  cbHoatDong.Checked = selectedThuoc.HoatDong;
             txtHeSoAnToan.Text = selectedThuoc.HeSoAnToan.ToString();
-            txtNhomThuoc.Text = selectedThuoc.NhomThuoc;
+            txtNhomThuoc.Text = selectedThuoc.ProductGroup;
         }
 
         private void grdToaThuoc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -208,7 +210,7 @@ namespace UKPI.Presentation
         {
             txtMaThuoc.Text = string.Empty;
             txtTenThuoc.Text = string.Empty;
-            txtSoTT.Text = string.Empty;
+            txtDescription.Text = string.Empty;
             txtTenThanhPhanThuoc.Text = string.Empty;
             cbbDonViTinh.SelectedIndex = 0;
             cbBaoHiem.Checked = false;
@@ -247,25 +249,27 @@ namespace UKPI.Presentation
                 return;
             }
             ThongTinThuoc tttCapNhat = BuildThongTinThuoc(true);
-            if (_QuanLyDanhMucHangHoaDao.CheckThuocExist(tttCapNhat.MaThuocYTe, tttCapNhat.BaoHiem) == 1)
+            if (_QuanLyDanhMucHangHoaDao.CheckMaHangExist(tttCapNhat.ProductID) == 1)
             {
                 MessageBox.Show("Mã hàng đã tồn tại. Vui lòng chọn mã khác");
                 return;
             }
-            if (string.IsNullOrEmpty(tttCapNhat.MaThuocYTe))
+            if (string.IsNullOrEmpty(tttCapNhat.ProductID))
             {
                 MessageBox.Show("Vui lòng nhập thông tin hàng");
                 return;
             }
-
-            if (_QuanLyDanhMucHangHoaDao.LuuCapNhatThongTinThuoc(tttCapNhat))
+            
+                if (_QuanLyDanhMucHangHoaDao.LuuCapNhatThongTinThuoc_tbl_product(tttCapNhat))
+                {
+                    LoadDanhMucHangHoa(txtsMaThuoc.Text, txtsTenThuoc.Text);
+                    ResetFormThongTinHangHoa();
+                    MessageBox.Show("Lưu thành công");
+                }
+            
+          else
             {
-                LoadDanhMucHangHoa(txtsMaThuoc.Text, txtsTenThuoc.Text);
-                ResetFormThongTinHangHoa();
-                MessageBox.Show("Lưu thành công");
-            }
-            else
-            {
+                
                 MessageBox.Show("Có lỗi trong khi lưu");
             }
         }
@@ -303,13 +307,13 @@ namespace UKPI.Presentation
             //    MessageBox.Show("Mã thuốc đã tồn tại. Vui lòng chọn mã khác");
             //    return;
             //}
-            if (string.IsNullOrEmpty(tttCapNhat.MaThuocYTe))
+            if (string.IsNullOrEmpty(tttCapNhat.ProductID))
             {
                 MessageBox.Show("Vui lòng nhập thông tin hàng hóa");
                 return;
             }
 
-            if (_QuanLyDanhMucHangHoaDao.LuuCapNhatThongTinThuoc(tttCapNhat))
+            if (_QuanLyDanhMucHangHoaDao.LuuCapNhatThongTinThuoc_tbl_product(tttCapNhat))
             {
                 LoadDanhMucHangHoa(txtsMaThuoc.Text, txtsTenThuoc.Text);
                 ResetFormThongTinHangHoa();
