@@ -191,7 +191,7 @@ namespace UKPI.Presentation
             DataGridViewComboBoxColumn col = new DataGridViewComboBoxColumn();
             col.Width = 140;
             col.HeaderText = "Mã thuốc";
-            col.DataSource = _shareEntityDao.LoadThongTinThuoc();
+            col.DataSource = _shareEntityDao.LoadThongTinSanPham();
             col.DisplayMember = "MedicineID";
             col.ValueMember = "MedicineID";
             grdToaThuoc.Columns.Add(col);

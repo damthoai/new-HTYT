@@ -84,7 +84,7 @@ namespace UKPI.Presentation
             this.grdToaThuoc.Controls.Add(cellDateTimePicker);
             cbbPhongKham.Enabled = false;
             SetDefauldValue();
-            this.Text = "NHẬP KHO THUỐC";
+            this.Text = "NHẬP KHO";
             // Save original columns
             // _originalColumns = new DataGridViewColumn[grdStores.Columns.Count;
             // grdStores.Columns.CopyTo(_originalColumns, 0);
@@ -130,23 +130,17 @@ namespace UKPI.Presentation
 
         private void BuildGridViewRow()
         {
-            List<ThongTinThuoc> lstThuoc = _shareEntityDao.LoadThongTinThuoc();
+            // Lấy danh sách sản phẩm để chọn lựa trên lưới nhập kho--ChinhLH
+            List<ThongTinSanPham> lstThuoc = _shareEntityDao.LoadThongTinSanPham();
 
+            #region Thiết kế layout
+            
 
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             checkBoxColumn.Width = 60;
             checkBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             grdToaThuoc.Columns.Add(checkBoxColumn);
 
-
-            //DataGridViewComboBoxColumn col1 = new DataGridViewComboBoxColumn();
-            //col1.Width = 160;
-            //col1.HeaderText = "Tên Thuốc";
-            //col1.DataSource = lstThuoc;
-            //col1.DisplayMember = "MedicineName";
-            //col1.ValueMember = "MedicineID";
-            //col1.SortMode = DataGridViewColumnSortMode.NotSortable;
-            //grdToaThuoc.Columns.Add(col1);
 
             DataGridViewTextBoxColumn tenThuocColumn = new DataGridViewTextBoxColumn();
             tenThuocColumn.HeaderText = "Tên";
@@ -155,29 +149,27 @@ namespace UKPI.Presentation
             tenThuocColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             grdToaThuoc.Columns.Add(tenThuocColumn);
 
-
-
             DataGridViewComboBoxColumn col = new DataGridViewComboBoxColumn();
             col.Width = 140;
             col.HeaderText = "Mã";
             col.DataSource = lstThuoc;
-            col.DisplayMember = "MaThuocYTeHienThi";
+            col.DisplayMember = "Mã Sản Phẩm";
             //col.ValueMember = "MedicineID";
             col.ValueMember = "MaThuocYTeHienThi";
             col.SortMode = DataGridViewColumnSortMode.NotSortable;
             grdToaThuoc.Columns.Add(col);
 
-            DataGridViewTextBoxColumn hanSuDungColumn = new DataGridViewTextBoxColumn();
-            hanSuDungColumn.Width = 100;
-            hanSuDungColumn.HeaderText = "Hạn sử dụng";
-            hanSuDungColumn.Visible = true;
-            hanSuDungColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
+            //DataGridViewTextBoxColumn hanSuDungColumn = new DataGridViewTextBoxColumn();
+            //hanSuDungColumn.Width = 100;
+            //hanSuDungColumn.HeaderText = "Hạn sử dụng";
+            //hanSuDungColumn.Visible = true;
+            //hanSuDungColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             //grdToaThuoc.Columns.Add(hanSuDungColumn);
 
             DataGridViewCheckBoxColumn baoHiemColumn = new DataGridViewCheckBoxColumn();
             baoHiemColumn.Width = 100;
             baoHiemColumn.HeaderText = "Thuốc BH";
-            hanSuDungColumn.Visible = false;
+            //hanSuDungColumn.Visible = false;
             //baoHiemColumn.ReadOnly = true;
             baoHiemColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             //grdToaThuoc.Columns.Add(baoHiemColumn);
@@ -193,17 +185,17 @@ namespace UKPI.Presentation
             //hamLuongColumn.HeaderText = "Hàm lượng";
             //grdToaThuoc.Columns.Add(hamLuongColumn);
 
-            DataGridViewTextBoxColumn giaNhapColumn = new DataGridViewTextBoxColumn();
-            giaNhapColumn.Width = 130;
-            giaNhapColumn.HeaderText = "Giá thời diểm nhập";
-            giaNhapColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
-            giaNhapColumn.Visible = false ;
+            //DataGridViewTextBoxColumn giaNhapColumn = new DataGridViewTextBoxColumn();
+            //giaNhapColumn.Width = 130;
+            //giaNhapColumn.HeaderText = "Giá thời diểm nhập";
+            //giaNhapColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
+            //giaNhapColumn.Visible = false ;
             //grdToaThuoc.Columns.Add(giaNhapColumn);
 
-            DataGridViewTextBoxColumn giaTTColumn = new DataGridViewTextBoxColumn();
-            giaTTColumn.Width = 130;
-            giaTTColumn.HeaderText = "Giá mua vào";hanSuDungColumn.Visible = false;
-            giaTTColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
+            //DataGridViewTextBoxColumn giaTTColumn = new DataGridViewTextBoxColumn();
+            //giaTTColumn.Width = 130;
+            //giaTTColumn.HeaderText = "Giá mua vào";//hanSuDungColumn.Visible = false;
+            //giaTTColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             // giaTTColumn.ReadOnly = true;
             //grdToaThuoc.Columns.Add(giaTTColumn);
 
@@ -214,10 +206,10 @@ namespace UKPI.Presentation
             //cachUongColumn.DisplayMember = "CachUong";
             //cachUongColumn.ValueMember = "MaUongThuoc";
             //grdToaThuoc.Columns.Add(cachUongColumn);
-            DataGridViewTextBoxColumn giaSTColumn = new DataGridViewTextBoxColumn();
-            giaSTColumn.Width = 130;
-            giaSTColumn.HeaderText = "Giá mua vào có thuế";hanSuDungColumn.Visible = false;
-            giaSTColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
+            //DataGridViewTextBoxColumn giaSTColumn = new DataGridViewTextBoxColumn();
+            //giaSTColumn.Width = 130;
+            //giaSTColumn.HeaderText = "Giá mua vào có thuế";//hanSuDungColumn.Visible = false;
+            //giaSTColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             //giaSTColumn.ReadOnly = true;
             //grdToaThuoc.Columns.Add(giaSTColumn);
 
@@ -237,6 +229,7 @@ namespace UKPI.Presentation
 
             DataGridViewButtonColumn byRFIDColumn = new DataGridViewButtonColumn();
             byRFIDColumn.Width = 130;
+            byRFIDColumn.Text= "by RFID";
             byRFIDColumn.HeaderText = "by RFID";
             byRFIDColumn.ReadOnly = true;
             byRFIDColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -248,8 +241,12 @@ namespace UKPI.Presentation
             grdToaThuoc.EditingControlShowing += new DataGridViewEditingControlShowingEventHandler(dataGridView1_EditingControlShowing);
             grdToaThuoc.CellValueChanged += grdToaThuoc_CellValueChanged;
             // grdToaThuoc.CellClick += dataGridView1_CellClick;
+            #endregion
+
             grdToaThuoc.CellContentClick += dataGridView1_CellContentClick;
+
             int rowIndex = this.grdToaThuoc.Rows.Add(1);
+            //this.grdToaThuoc.Rows[rowIndex-1].Cells["byRFIDColumn"].ReadOnly = true;
             var row = this.grdToaThuoc.Rows[rowIndex];
 
         }
@@ -271,8 +268,12 @@ namespace UKPI.Presentation
             //}
          }
         
-        // Thực hiện show PopUp Form Khi Click By RFID. Made by PhongLF
 
+        /// <summary>
+        /// Thực hiện show PopUp Form Khi Click By RFID. Made by PhongLF
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {                        
             if(e.ColumnIndex == 6 && e.RowIndex >= 0)
@@ -281,12 +282,12 @@ namespace UKPI.Presentation
                 if (grdToaThuoc.Rows[e.RowIndex].Cells[2].Value != null)
                 {
                     DataGridViewRow row = this.grdToaThuoc.Rows[e.RowIndex];
-                    
-                    List<ThongTinThuoc> lstThuoc = _shareEntityDao.LoadThongTinThuoc();
+
+                    List<ThongTinSanPham> lstThuoc = _shareEntityDao.LoadThongTinSanPham();
                      
                     string pos = grdToaThuoc.Rows[e.RowIndex].Cells[2].Value.ToString();
                     int n = -1;
-                    foreach (ThongTinThuoc item in lstThuoc)
+                    foreach (ThongTinSanPham item in lstThuoc)
                     {
                         if(item.MaThuocYTe == pos)
                         {
@@ -295,7 +296,7 @@ namespace UKPI.Presentation
                         }
                     }
                     //MessageBox.Show(n.ToString());
-                    ThongTinThuoc tttcbm = lstThuoc[n];
+                    ThongTinSanPham tttcbm = lstThuoc[n];
                     var form = new frmNhapKhoChiTiet(tttcbm);
                     form.Show(this);
                     
@@ -322,8 +323,8 @@ namespace UKPI.Presentation
 
                     //MessageBox.Show("Button on row {0} clicked", e.RowIndex.ToString());
 
-                    List<ThongTinThuoc> lstThuoc = _shareEntityDao.LoadThongTinThuoc();
-                    ThongTinThuoc tttcbm = this.cbm.SelectedItem as ThongTinThuoc;
+                    List<ThongTinSanPham> lstThuoc = _shareEntityDao.LoadThongTinSanPham();
+                    ThongTinSanPham tttcbm = this.cbm.SelectedItem as ThongTinSanPham;
                         //ThongTinThuoc tttcbm = lstThuoc[currentCell.RowIndex];
                         var form = new frmNhapKhoChiTiet(tttcbm);
                         form.Show();
@@ -367,14 +368,10 @@ namespace UKPI.Presentation
 
 
         #endregion
-
-
         private void btnExport_Click(object sender, EventArgs e)
         {
             // this.Export();
         }
-
-
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             // MessageBox.Show(clsResources.GetMessage("messages.save.success"), clsResources.GetMessage("messages.general"), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -386,7 +383,6 @@ namespace UKPI.Presentation
             }
 
         }
-
         private void btnLuuIn_Click(object sender, EventArgs e)
         {
             DialogResult warningMessage = MessageBox.Show(clsResources.GetMessage("messages.frmnhapkhothuoc.WarningMessage"), clsResources.GetMessage("messages.frmnhapkhothuoc.SuccessTitle"), MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -431,9 +427,7 @@ namespace UKPI.Presentation
         public void SetQuyetDinhNghiPhep(QuyetDinhNghiPhep qd)
         {
             this.quyetDinhNghiPhep = qd;
-        }
-       
-
+        }      
         private bool ValidateThongSoNhapKho()
         {
             bool isValid = true;

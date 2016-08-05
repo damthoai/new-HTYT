@@ -29,7 +29,7 @@ namespace UKPI.Presentation
         string tagCount = "0";
         string maThuoc;
 
-        public frmNhapKhoChiTiet(ThongTinThuoc tttcbm)
+        public frmNhapKhoChiTiet(ThongTinSanPham tttcbm)
         {
             InitializeComponent();            
             txtTenHang.Text = tttcbm.MedicineName;
