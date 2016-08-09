@@ -221,7 +221,6 @@
             this.txtQuocGia.BackColor = System.Drawing.Color.White;
             this.txtQuocGia.Location = new System.Drawing.Point(723, 65);
             this.txtQuocGia.Name = "txtQuocGia";
-            this.txtQuocGia.ReadOnly = true;
             this.txtQuocGia.Size = new System.Drawing.Size(208, 20);
             this.txtQuocGia.TabIndex = 61;
             // 
@@ -281,9 +280,9 @@
             // 
             this.grdChiTietNhap.AllowUserToAddRows = false;
             this.grdChiTietNhap.AllowUserToDeleteRows = false;
-            this.grdChiTietNhap.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdChiTietNhap.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.grdChiTietNhap.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;

@@ -77,15 +77,15 @@ namespace UKPI.Presentation
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTongThanhTien = new System.Windows.Forms.Label();
             this.txtTongThanhTien = new System.Windows.Forms.TextBox();
-            this.grdToaThuoc = new UKPI.Controls.DataGridView_RowNum();
+            this.grdSanPham = new UKPI.Controls.DataGridView_RowNum();
             this.grpThongTinKhamBenh.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdToaThuoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSanPham)).BeginInit();
             this.SuspendLayout();
             // 
             // grpThongTinKhamBenh
             // 
-            this.grpThongTinKhamBenh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpThongTinKhamBenh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.grpThongTinKhamBenh.Controls.Add(this.txtTenThuoc);
             this.grpThongTinKhamBenh.Controls.Add(this.textBox1);
             this.grpThongTinKhamBenh.Controls.Add(this.lblTinhtrangReader);
@@ -480,13 +480,13 @@ namespace UKPI.Presentation
             this.txtTongThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTongThanhTien.Visible = false;
             // 
-            // grdToaThuoc
+            // grdSanPham
             // 
-            this.grdToaThuoc.AllowUserToAddRows = false;
-            this.grdToaThuoc.AllowUserToDeleteRows = false;
-            this.grdToaThuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdSanPham.AllowUserToAddRows = false;
+            this.grdSanPham.AllowUserToDeleteRows = false;
+            this.grdSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -494,8 +494,8 @@ namespace UKPI.Presentation
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdToaThuoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.grdToaThuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.grdSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -503,13 +503,12 @@ namespace UKPI.Presentation
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdToaThuoc.DefaultCellStyle = dataGridViewCellStyle9;
-            this.grdToaThuoc.Location = new System.Drawing.Point(4, 162);
-            this.grdToaThuoc.Name = "grdToaThuoc";
-            this.grdToaThuoc.RowHeadersWidth = 39;
-            this.grdToaThuoc.Size = new System.Drawing.Size(1257, 281);
-            this.grdToaThuoc.TabIndex = 10;
-            this.grdToaThuoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdToaThuoc_CellContentClick);
+            this.grdSanPham.DefaultCellStyle = dataGridViewCellStyle9;
+            this.grdSanPham.Location = new System.Drawing.Point(4, 162);
+            this.grdSanPham.Name = "grdSanPham";
+            this.grdSanPham.RowHeadersWidth = 39;
+            this.grdSanPham.Size = new System.Drawing.Size(1257, 281);
+            this.grdSanPham.TabIndex = 10;
             // 
             // frmnhapkhothuoc
             // 
@@ -518,14 +517,14 @@ namespace UKPI.Presentation
             this.ClientSize = new System.Drawing.Size(1267, 495);
             this.Controls.Add(this.txtTongThanhTien);
             this.Controls.Add(this.lblTongThanhTien);
-            this.Controls.Add(this.grdToaThuoc);
+            this.Controls.Add(this.grdSanPham);
             this.Controls.Add(this.grpThongTinKhamBenh);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmnhapkhothuoc";
             this.Text = "NHẬP KHO";
             this.grpThongTinKhamBenh.ResumeLayout(false);
             this.grpThongTinKhamBenh.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdToaThuoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSanPham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -559,7 +558,7 @@ namespace UKPI.Presentation
         private System.Windows.Forms.Button btnXoaThuoc;
         private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.Button btnLuuIn;
-        private Controls.DataGridView_RowNum grdToaThuoc;
+        private Controls.DataGridView_RowNum grdSanPham;
         private System.Windows.Forms.Label lblTongThanhTien;
         private System.Windows.Forms.TextBox txtTongThanhTien;
         private System.Windows.Forms.TextBox txtNhanVienNhap;

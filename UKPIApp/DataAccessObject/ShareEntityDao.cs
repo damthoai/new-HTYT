@@ -14,7 +14,9 @@ namespace UKPI.DataAccessObject
 
         private static readonly ILog log = log4net.LogManager.GetLogger(typeof(ShareEntityDao));
         private static string m_strConn = clsCommon.GetConnectionString();
-        private const string p_HUFS_LoadThongTinThuoc = "p_HUFS_LoadThongTinThuoc";
+        //private const string p_HUFS_LoadThongTinThuoc = "p_HUFS_LoadThongTinThuoc";
+        private const string p_HUFS_LoadThongTinSanPham = "p_HUFS_LoadThongTinSanPham";
+
         private const string p_HUFS_LoadThongTinThuocForNhapKho = "p_HUFS_LoadThongTinThuocForNhapKho";
         private const string p_HUFS_LoadAllThongTinThuoc = "p_HUFS_LoadAllThongTinThuoc";
         private const string p_HUFS_LoadThongTinThuocTheoMaThuocYTe = "p_HUFS_LoadThongTinThuocTheoMaThuocYTe";
@@ -513,12 +515,12 @@ namespace UKPI.DataAccessObject
             }
         }
         */
-        public List<ThongTinThuoc> LoadThongTinThuoc()
+        public List<ThongTinSanPham> LoadThongTinSanPham()
         {
             try
             {
-                var dtResult = DataServices.ExecuteDataTable(CommandType.StoredProcedure, p_HUFS_LoadThongTinThuoc);
-                return this.ConvertDataTableToList<ThongTinThuoc>(dtResult);
+                var dtResult = DataServices.ExecuteDataTable(CommandType.StoredProcedure, p_HUFS_LoadThongTinSanPham);
+                return this.ConvertDataTableToList<ThongTinSanPham>(dtResult);
             }
             catch (Exception ex)
             {
@@ -527,12 +529,16 @@ namespace UKPI.DataAccessObject
             }
         }
 
-        public List<ThongTinThuoc> LoadThongTinThuocForNhapKho()
+        /// <summary>
+        /// Lấy tất cả các sản phẩm hiện có trong kho. Đang actived.
+        /// </summary>
+        /// <returns></returns>
+        public List<ThongTinSanPham> LoadDanhMucSanPham()
         {
             try
             {
-                var dtResult = DataServices.ExecuteDataTable(CommandType.StoredProcedure, p_HUFS_LoadThongTinThuoc);
-                return this.ConvertDataTableToList<ThongTinThuoc>(dtResult);
+                var dtResult = DataServices.ExecuteDataTable(CommandType.StoredProcedure, p_HUFS_LoadThongTinSanPham);
+                return this.ConvertDataTableToList<ThongTinSanPham>(dtResult);
             }
             catch (Exception ex)
             {

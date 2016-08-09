@@ -29,25 +29,53 @@ namespace UKPI.Presentation
         string tagCount = "0";
         string maThuoc;
 
+        
+
+        #region delegate
+
+        //string _str;
+        // khai báo 1 hàm delegate
+        public delegate void GetString(string str);
+        // khai báo 1 kiểu hàm delegate
+        public GetString MyGetData;          
+        #endregion
+
+
         public frmNhapKhoChiTiet(ThongTinSanPham tttcbm)
         {
-            InitializeComponent();            
-            txtTenHang.Text = tttcbm.MedicineName;
-            txtMaHeThong.Text = tttcbm.MedicineID;
-            txtMaThuocYTe.Text = tttcbm.MaThuocYTe;
-            txtDVT.Text = tttcbm.TenDonViTinh;
-            txtThanhPhan.Text = tttcbm.TenThanhPhanThuoc;
-            txtHamLuong.Text = tttcbm.HamLuong;
+            InitializeComponent();
+
+            txtTenHang.Text = tttcbm.ProductName;
+            txtMaHeThong.Text = tttcbm.SysId;
+            txtMaThuocYTe.Text = tttcbm.ProductID;
+            txtDVT.Text = tttcbm.DonViTinh;
+            //txtThanhPhan.Text = tttcbm.TenThanhPhanThuoc;
+            //txtHamLuong.Text = tttcbm.HamLuong;
             txtHeSoAnToan.Text = tttcbm.HeSoAnToan.ToString();
-            txtNhaSanXuat.Text = tttcbm.NhaSanXuat;
-            txtQuocGia.Text = tttcbm.QuocGia;
+            //txtNhaSanXuat.Text = tttcbm.NhaSanXuat;
+            //txtQuocGia.Text = tttcbm.QuocGia;
             SetDefaultValue();
-            maThuoc = tttcbm.MaThuocYTeHienThi;
+            //maThuoc = tttcbm.MaThuocYTeHienThi;
             if (File.Exists("TempFileXML\\" + maThuoc + ".xml"))
             {
                 LoadXML();
             }
-            this.Text = "NHẬP KHO CHI TIẾT: " + tttcbm.MaThuocYTeHienThi;           
+            this.Text = "NHẬP KHO CHI TIẾT: " + tttcbm.ProductID; 
+            this.FormClosed += new FormClosedEventHandler(frmNhapKhoChiTiet_FormClosed);
+            this.txtQuocGia.TextChanged += new EventHandler(txtQuocGia_TextChanged);
+        }
+
+        void txtQuocGia_TextChanged(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            //MyGetData(txtQuocGia.Text);
+        }
+
+        void frmNhapKhoChiTiet_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //throw new NotImplementedException();
+            //truyền sang form gốc
+            MyGetData(txtQuocGia.Text);
         }
 
         private void SetDefaultValue()
@@ -177,6 +205,12 @@ namespace UKPI.Presentation
                 ds.Tables["listMa"].Rows.Add(row);
             }
             ds.WriteXml("TempFileXML\\"+maThuoc+".xml");
+
+
+
+            
+
+
             this.Close();
         }
 
@@ -186,16 +220,16 @@ namespace UKPI.Presentation
             DataSet ds = new DataSet();
             ds.ReadXml("TempFileXML\\" + maThuoc + ".xml");
             txtCount.Text = ds.Tables["dtTag"].Rows[0][0].ToString();            
-            foreach(DataRow item in ds.Tables["listMa"].Rows)
-            {
-                int n = grdChiTietNhap.Rows.Add();                
-                grdChiTietNhap.Rows[n].Cells[0].Value = item["checkBox"];
-                grdChiTietNhap.Rows[n].Cells[1].Value = item["STT"].ToString();
-                grdChiTietNhap.Rows[n].Cells[2].Value = item["maTag"].ToString();
-                grdChiTietNhap.Rows[n].Cells[3].Value = item["soLuong"].ToString();
-                grdChiTietNhap.Rows[n].Cells[4].Value = item["tenReader"].ToString();
-                grdChiTietNhap.Rows[n].Cells[5].Value = item["thoiGian"].ToString();
-            }
+            //foreach(DataRow item in ds.Tables["listMa"].Rows)
+            //{
+            //    int n = grdChiTietNhap.Rows.Add();                
+            //    grdChiTietNhap.Rows[n].Cells[0].Value = item["checkBox"];
+            //    grdChiTietNhap.Rows[n].Cells[1].Value = item["STT"].ToString();
+            //    grdChiTietNhap.Rows[n].Cells[2].Value = item["maTag"].ToString();
+            //    grdChiTietNhap.Rows[n].Cells[3].Value = item["soLuong"].ToString();
+            //    grdChiTietNhap.Rows[n].Cells[4].Value = item["tenReader"].ToString();
+            //    grdChiTietNhap.Rows[n].Cells[5].Value = item["thoiGian"].ToString();
+            //}
         }
 
         private void btnXoaTag_Click(object sender, EventArgs e)

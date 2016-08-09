@@ -1,0 +1,103 @@
+﻿2016-08-08 15:24:11,231 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 15:25:44,776 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 15:29:29,521 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 15:34:59,697 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 15:41:09,042 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 15:43:35,866 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 15:59:03,397 [4] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 15:59:15,057 [4] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-08 16:04:16,995 [4] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 16:04:30,685 [4] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-08 16:26:07,058 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 16:26:31,388 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-08 16:27:34,550 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 16:29:01,715 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 16:39:04,346 [10] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 16:48:19,725 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 16:48:53,361 [7] ERROR UKPI.frmMain - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Field called Mã Sản Phẩm does not exist.
+   at System.Windows.Forms.DataGridViewComboBoxCell.InitializeDisplayMemberPropertyDescriptor(String displayMember)
+   at System.Windows.Forms.DataGridViewComboBoxCell.OnDataGridViewChanged()
+   at System.Windows.Forms.DataGridViewRowCollection.Add(Int32 count)
+   at UKPI.Presentation.frmnhapkhothuoc.BuildGridViewRow() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 217
+   at UKPI.Presentation.frmnhapkhothuoc.SetDefauldValue() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 111
+   at UKPI.Presentation.frmnhapkhothuoc..ctor() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 86
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandle& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceImpl(Boolean publicOnly, Boolean skipVisibilityChecks, Boolean fillCache)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at UKPI.frmMain.MenuItem_OnClick(Object sender, EventArgs e) in D:\Git\new-HTYT\UKPIApp\Presentation\frmMain.cs:line 646
+2016-08-08 16:49:05,684 [7] ERROR UKPI.frmMain - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Field called Mã Sản Phẩm does not exist.
+   at System.Windows.Forms.DataGridViewComboBoxCell.InitializeDisplayMemberPropertyDescriptor(String displayMember)
+   at System.Windows.Forms.DataGridViewComboBoxCell.OnDataGridViewChanged()
+   at System.Windows.Forms.DataGridViewRowCollection.Add(Int32 count)
+   at UKPI.Presentation.frmnhapkhothuoc.BuildGridViewRow() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 217
+   at UKPI.Presentation.frmnhapkhothuoc.SetDefauldValue() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 111
+   at UKPI.Presentation.frmnhapkhothuoc..ctor() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 86
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandle& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceImpl(Boolean publicOnly, Boolean skipVisibilityChecks, Boolean fillCache)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at UKPI.frmMain.MenuItem_OnClick(Object sender, EventArgs e) in D:\Git\new-HTYT\UKPIApp\Presentation\frmMain.cs:line 646
+2016-08-08 16:54:02,903 [7] ERROR UKPI.frmMain - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Field called Mã Sản Phẩm does not exist.
+   at System.Windows.Forms.DataGridViewComboBoxCell.InitializeDisplayMemberPropertyDescriptor(String displayMember)
+   at System.Windows.Forms.DataGridViewComboBoxCell.OnDataGridViewChanged()
+   at System.Windows.Forms.DataGridViewRowCollection.Add(Int32 count)
+   at UKPI.Presentation.frmnhapkhothuoc.BuildGridViewRow() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 217
+   at UKPI.Presentation.frmnhapkhothuoc.SetDefauldValue() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 111
+   at UKPI.Presentation.frmnhapkhothuoc..ctor() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 86
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandle& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceImpl(Boolean publicOnly, Boolean skipVisibilityChecks, Boolean fillCache)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at UKPI.frmMain.MenuItem_OnClick(Object sender, EventArgs e) in D:\Git\new-HTYT\UKPIApp\Presentation\frmMain.cs:line 646
+2016-08-08 16:54:45,873 [7] ERROR UKPI.frmMain - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Field called Mã Sản Phẩm does not exist.
+   at System.Windows.Forms.DataGridViewComboBoxCell.InitializeDisplayMemberPropertyDescriptor(String displayMember)
+   at System.Windows.Forms.DataGridViewComboBoxCell.OnDataGridViewChanged()
+   at System.Windows.Forms.DataGridViewRowCollection.Add(Int32 count)
+   at UKPI.Presentation.frmnhapkhothuoc.BuildGridViewRow() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 217
+   at UKPI.Presentation.frmnhapkhothuoc.SetDefauldValue() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 111
+   at UKPI.Presentation.frmnhapkhothuoc..ctor() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 86
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandle& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceImpl(Boolean publicOnly, Boolean skipVisibilityChecks, Boolean fillCache)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at UKPI.frmMain.MenuItem_OnClick(Object sender, EventArgs e) in D:\Git\new-HTYT\UKPIApp\Presentation\frmMain.cs:line 646
+2016-08-08 16:55:00,282 [9] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-08 18:20:53,752 [3] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 18:31:22,781 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 18:31:35,553 [9] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-08 18:32:08,799 [4] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 18:32:15,259 [4] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-08 18:36:35,134 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 18:41:37,642 [4] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 18:41:45,109 [4] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-08 18:43:07,292 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 19:26:54,301 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 20:42:42,398 [4] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 20:43:10,493 [4] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-08 20:47:14,752 [10] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 20:54:35,596 [4] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 20:54:51,848 [4] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-08 20:55:06,722 [4] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 20:55:15,312 [4] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-08 20:56:18,758 [10] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 20:57:39,363 [4] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 20:58:01,025 [4] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-08 21:15:11,393 [4] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-08 21:16:32,413 [4] DEBUG UKPI.frmMain - Thread was being aborted.

@@ -714,6 +714,7 @@
     <Compile Include="ValueObject\Employees.cs" />
     <Compile Include="ValueObject\LFThongTinHangHoaChiTiet.cs" />
     <Compile Include="ValueObject\ThongTinHangHoa.cs" />
+    <Compile Include="ValueObject\ThongTinSanPham.cs" />
     <Compile Include="ValueObject\WareHouse.cs" />
     <Compile Include="ValueObject\ThongTinThuocKhamBenh.cs" />
     <Compile Include="ValueObject\CustomKey.cs" />
@@ -1255,11 +1256,15 @@
     <Compile Include="Controls\DataGridComboBoxColumn.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\DataGridDisableCell.cs" />
+    <Compile Include="Controls\DataGridDisableCell.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\DataGridRadioColumn.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\DataGridTextAutoHilight.cs" />
+    <Compile Include="Controls\DataGridTextAutoHilight.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\DataGridTimePickerColumn.cs">
       <SubType>Component</SubType>
     </Compile>

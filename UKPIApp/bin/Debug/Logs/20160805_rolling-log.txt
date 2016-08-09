@@ -1,0 +1,122 @@
+﻿2016-08-05 15:16:24,403 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-05 15:42:25,963 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-05 15:48:51,124 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-05 15:49:34,225 [9] ERROR UKPI.DataAccessObject.ShareEntityDao - A transport-level error has occurred when sending the request to the server. (provider: TCP Provider, error: 0 - An existing connection was forcibly closed by the remote host.)
+System.Data.SqlClient.SqlException: A transport-level error has occurred when sending the request to the server. (provider: TCP Provider, error: 0 - An existing connection was forcibly closed by the remote host.)
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParserStateObject.WriteSni()
+   at System.Data.SqlClient.TdsParserStateObject.ExecuteFlush()
+   at System.Data.SqlClient.TdsParser.TdsExecuteSQLBatch(String text, Int32 timeout, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at UKPI.DataAccessObject.ShareEntityDao.LoadDanhSachPhongKham() in D:\Git\new-HTYT\UKPIApp\DataAccessObject\ShareEntityDao.cs:line 39
+2016-08-05 15:50:27,787 [9] ERROR UKPI.frmMain - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Data.SqlClient.SqlException: A transport-level error has occurred when sending the request to the server. (provider: TCP Provider, error: 0 - An existing connection was forcibly closed by the remote host.)
+   at UKPI.DataAccessObject.ShareEntityDao.LoadDanhSachPhongKham() in D:\Git\new-HTYT\UKPIApp\DataAccessObject\ShareEntityDao.cs:line 66
+   at UKPI.Presentation.frmnhapkhothuoc.BindPhongKham() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 117
+   at UKPI.Presentation.frmnhapkhothuoc.SetDefauldValue() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 110
+   at UKPI.Presentation.frmnhapkhothuoc..ctor() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 86
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandle& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceImpl(Boolean publicOnly, Boolean skipVisibilityChecks, Boolean fillCache)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at UKPI.frmMain.MenuItem_OnClick(Object sender, EventArgs e) in D:\Git\new-HTYT\UKPIApp\Presentation\frmMain.cs:line 646
+2016-08-05 15:51:18,600 [4] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-05 15:51:23,617 [4] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-05 15:54:11,118 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-05 15:54:22,252 [9] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-05 15:59:30,326 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-05 16:44:37,518 [4] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-05 16:44:39,698 [1] ERROR UKPI.frmMain - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Column named byRFIDColumn cannot be found.
+Parameter name: columnName
+   at System.Windows.Forms.DataGridViewCellCollection.get_Item(String columnName)
+   at UKPI.Presentation.frmnhapkhothuoc.BuildGridViewRow() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 249
+   at UKPI.Presentation.frmnhapkhothuoc.SetDefauldValue() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 111
+   at UKPI.Presentation.frmnhapkhothuoc..ctor() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 86
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandle& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceImpl(Boolean publicOnly, Boolean skipVisibilityChecks, Boolean fillCache)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at UKPI.frmMain.MenuItem_OnClick(Object sender, EventArgs e) in D:\Git\new-HTYT\UKPIApp\Presentation\frmMain.cs:line 646
+2016-08-05 16:44:50,045 [1] ERROR UKPI.frmMain - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Column named byRFIDColumn cannot be found.
+Parameter name: columnName
+   at System.Windows.Forms.DataGridViewCellCollection.get_Item(String columnName)
+   at UKPI.Presentation.frmnhapkhothuoc.BuildGridViewRow() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 249
+   at UKPI.Presentation.frmnhapkhothuoc.SetDefauldValue() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 111
+   at UKPI.Presentation.frmnhapkhothuoc..ctor() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 86
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandle& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceImpl(Boolean publicOnly, Boolean skipVisibilityChecks, Boolean fillCache)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at UKPI.frmMain.MenuItem_OnClick(Object sender, EventArgs e) in D:\Git\new-HTYT\UKPIApp\Presentation\frmMain.cs:line 646
+2016-08-05 16:45:04,251 [4] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-05 16:45:46,508 [7] ERROR UKPI.frmMain - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Column named byRFIDColumn cannot be found.
+Parameter name: columnName
+   at System.Windows.Forms.DataGridViewCellCollection.get_Item(String columnName)
+   at UKPI.Presentation.frmnhapkhothuoc.BuildGridViewRow() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 249
+   at UKPI.Presentation.frmnhapkhothuoc.SetDefauldValue() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 111
+   at UKPI.Presentation.frmnhapkhothuoc..ctor() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 86
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandle& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceImpl(Boolean publicOnly, Boolean skipVisibilityChecks, Boolean fillCache)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at UKPI.frmMain.MenuItem_OnClick(Object sender, EventArgs e) in D:\Git\new-HTYT\UKPIApp\Presentation\frmMain.cs:line 646
+2016-08-05 16:45:50,343 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-05 16:45:51,367 [9] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-05 16:46:27,653 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-05 16:47:20,072 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-05 16:48:24,624 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-05 16:48:24,860 [9] ERROR UKPI.frmMain - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Column named byRFIDColumn cannot be found.
+Parameter name: columnName
+   at System.Windows.Forms.DataGridViewCellCollection.get_Item(String columnName)
+   at UKPI.Presentation.frmnhapkhothuoc.BuildGridViewRow() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 249
+   at UKPI.Presentation.frmnhapkhothuoc.SetDefauldValue() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 111
+   at UKPI.Presentation.frmnhapkhothuoc..ctor() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 86
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandle& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceImpl(Boolean publicOnly, Boolean skipVisibilityChecks, Boolean fillCache)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at UKPI.frmMain.MenuItem_OnClick(Object sender, EventArgs e) in D:\Git\new-HTYT\UKPIApp\Presentation\frmMain.cs:line 646
+2016-08-05 16:48:29,219 [11] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-05 16:50:38,928 [9] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.
+2016-08-05 16:50:39,879 [7] ERROR UKPI.frmMain - Exception has been thrown by the target of an invocation.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   at UKPI.Presentation.frmnhapkhothuoc.BuildGridViewRow() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 249
+   at UKPI.Presentation.frmnhapkhothuoc.SetDefauldValue() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 111
+   at UKPI.Presentation.frmnhapkhothuoc..ctor() in D:\Git\new-HTYT\UKPIApp\Presentation\frmnhapkhothuoc.cs:line 86
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandle& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean fillCache)
+   at System.RuntimeType.CreateInstanceImpl(Boolean publicOnly, Boolean skipVisibilityChecks, Boolean fillCache)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at UKPI.frmMain.MenuItem_OnClick(Object sender, EventArgs e) in D:\Git\new-HTYT\UKPIApp\Presentation\frmMain.cs:line 646
+2016-08-05 16:50:46,513 [9] DEBUG UKPI.frmMain - Thread was being aborted.
+2016-08-05 16:51:09,333 [11] ERROR UKPI.frmMain - Import folder 'D:\UKPI\Import\Stores' is not exist.

@@ -28,3 +28,18 @@ F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\FPT.Componet.Exce
 F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\FPT.Componet.Excel\obj\Debug\FPT.Component.ExcelPlus.csprojResolveAssemblyReference.cache
 F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\FPT.Componet.Excel\obj\Debug\FPT.Component.ExcelPlus.dll
 F:\AYAKA VN\Ayaka VN\RFID\Phong RFID SOFT\GitHub Team\new-HTYT\FPT.Componet.Excel\obj\Debug\FPT.Component.ExcelPlus.pdb
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\Library\EPPlusXmlDocumentationFile.xml
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\Library\EPPlus_License.txt
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\Library\Ionic_Utils_Zip_license.txt
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\Library\NPOI_License.txt
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\FPT.Component.ExcelPlus.dll.config
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\FPT.Component.ExcelPlus.dll
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\FPT.Component.ExcelPlus.pdb
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\EPPlus.dll
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\Interop.Excel.dll
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\NPOI.dll
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\Ionic.Zip.dll
+D:\Git\new-HTYT\FPT.Componet.Excel\bin\Debug\EPPlus.xml
+D:\Git\new-HTYT\FPT.Componet.Excel\obj\Debug\FPT.Component.ExcelPlus.csprojResolveAssemblyReference.cache
+D:\Git\new-HTYT\FPT.Componet.Excel\obj\Debug\FPT.Component.ExcelPlus.dll
+D:\Git\new-HTYT\FPT.Componet.Excel\obj\Debug\FPT.Component.ExcelPlus.pdb
